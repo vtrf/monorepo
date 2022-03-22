@@ -29,7 +29,7 @@ in
       }
     ];
 
-    # https://github.com/nix-community/home-manager/pull/2391
+    # TODO https://github.com/nix-community/home-manager/pull/2391
     extraConfig = ''
       " show column ruler
       set colorcolumn=80
@@ -51,7 +51,7 @@ in
       nnoremap <leader>hs <cmd>Telescope help_tags<cr>
       nnoremap <leader>pf <cmd>Telescope find_files<cr>
       nnoremap <leader>ps <cmd>Telescope live_grep<cr>
-      nnoremap <leader>pt <cmd>TodoTelescopex<cr>
+      nnoremap <leader>pt <cmd>TodoTelescope<cr>
       nnoremap <leader>ss <cmd>Telescope buffers<cr>
     '';
   };
