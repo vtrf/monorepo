@@ -18,5 +18,6 @@
 
     # misc
     bitwarden
+    obsidian
   ];
 }
