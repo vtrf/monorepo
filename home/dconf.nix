@@ -8,6 +8,20 @@ let
 in
 {
   dconf.settings = {
+    # custom keybindings
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Primary><Alt>t";
+      command = "gnome-terminal";
+      name = "Open terminal";
+    };
+
+
     "org/gnome/desktop/wm/keybindings" = {
       "switch-windows" = [ "<Alt>Tab" ];
       # this is needed so that I can M-SPC on Doom Emacs
