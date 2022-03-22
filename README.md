@@ -10,7 +10,7 @@ Home to my personal configuration files.
 
 - [Nix] as package manager.
 - [Home Manager][] to take care of my home directory on [NixOS][] and non-NixOS.
-- [VSCodium](https://vscodium.com/) and [https://www.gnu.org/software/emacs/](GNU Emacs) with [https://github.com/hlissner/doom-emacs](Doom Emacs). 
+- [VSCodium](https://vscodium.com/) and [Neovim](https://neovim.io/).
 
 ## Repository structure
 
