@@ -14,6 +14,7 @@ in
 
   programs.fzf.enable = true;
   home.sessionVariables = {
+    EDITOR = "vi";
     FZF_DEFAULT_OPTS = ''--prompt \" λ \"'';
   };
 }
