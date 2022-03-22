@@ -15,11 +15,12 @@ in
       ca = "commit --amend";
       cm = "commit -m";
       co = "checkout";
+      cu = ''!f(){ git stash && git checkout $1 && git fetch --all --prune && git pull origin $1; };f'';
       df = "diff";
-      ri = "rebase --interactive --autosquash";
-      st = "status --short --branch";
       hist = "log --graph --pretty=format:'%Cred%h%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)%Creset [%an]' --abbrev-commit --date=relative";
+      ri = "rebase --interactive --autosquash";
       squash-all = ''!f(){ git reset $(git commit-tree HEAD^{tree} -m "''${1:-A new start}");};f'';
+      st = "status --short --branch";
     };
 
     delta = {
