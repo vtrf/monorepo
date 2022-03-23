@@ -61,6 +61,7 @@
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
 
       [ -d "$HOME/.local/bin" ] && export PATH=$PATH:$HOME/.local/bin
+      [ -d "$HOME/go/bin" ] && export PATH=$PATH:$HOME/go/bin
     '';
   };
 }
