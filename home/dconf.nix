@@ -21,12 +21,6 @@ in
       name = "Open terminal";
     };
 
-
-    "org/gnome/desktop/wm/keybindings" = {
-      "switch-windows" = [ "<Alt>Tab" ];
-      # this is needed so that I can M-SPC on Doom Emacs
-      "activate-window-menu" = [ ];
-    };
     "org/gnome/desktop/peripherals/trackball" = {
       "middle-click-emulation" = true;
       "scroll-wheel-emulation-button" = 8;
