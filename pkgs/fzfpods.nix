@@ -7,7 +7,7 @@ let
   fzf = "${pkgs.fzf}/bin/fzf";
   kubectl = "${pkgs.kubectl}/bin/kubectl";
 in
-writeShellScriptBin "pods" ''
+writeShellScriptBin "fzfpods" ''
   FZF_DEFAULT_COMMAND="${kubectl} get pods --all-namespaces" \
     ${fzf}  --info=inline --layout=reverse --header-lines=1 \
             --prompt "$(${kubectl} config current-context | sed 's/-context$//')> " \

@@ -95,6 +95,14 @@
             ./modules/meta.nix
 
             inputs.nixColors.homeManagerModule
+
+            ({ pkgs, ... }: {
+              home.packages = with pkgs; [
+                kubectl
+                google-cloud-sdk
+                fzfpods
+              ];
+            })
           ];
         };
       };
