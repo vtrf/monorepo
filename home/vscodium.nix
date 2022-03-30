@@ -1,7 +1,7 @@
 { super, lib, pkgs, ... }:
 
 let
-  inherit (pkgs) rust-analyzer;
+  inherit (pkgs) nixpkgs-fmt rnix-lsp rust-analyzer;
 in
 {
   programs.vscode = {
@@ -26,7 +26,11 @@ in
       };
 
       # Nix
-      "nix.enableLanguageServer" = true;
+      "nix" = {
+        "formatterPath" = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
+        "enableLanguageServer" = true;
+        "serverPath" = "${rnix-lsp}/bin/rnix-lsp";
+      };
       "[nix]" = {
         "editor.tabSize" = 2;
         "editor.insertSpaces" = true;
