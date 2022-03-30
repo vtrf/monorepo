@@ -19,13 +19,16 @@
     in
     {
       nixosConfigurations = {
-        bootstrapt495 = prelude.mkHost {
+        bootstrap = prelude.mkHost {
           host = "t495";
           system = "x86_64-linux";
           username = "victor";
           nixosModules = [
+            ./modules/meta.nix
             ./nixos/nix.nix
             ./nixos/user.nix
+
+            ./hosts/t495/hardware-configuration.nix
 
             inputs.hardware.nixosModules.lenovo-thinkpad-t495
           ];
