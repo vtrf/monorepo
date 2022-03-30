@@ -9,38 +9,34 @@ in
     package = pkgs.vscodium;
     userSettings = {
       # auto update tags when edited
+      "editor.formatOnSave" = true;
       "editor.linkedEditing" = true;
       "editor.rulers" = [ 80 120 ];
-      "editor.formatOnSave" = true;
       "workbench.tree.indent" = 15;
 
-      "editor.fontFamily" = "Jetbrains Mono";
       "workbench.colorTheme" = "Tomorrow Night";
       "workbench.iconTheme" = "material-icon-theme";
 
+      "terminal.integrated.tabs.enabled" = true;
       "window.titleBarStyle" = "custom";
       "window.zoomLevel" = 0;
-      "terminal.integrated.tabs.enabled" = true;
       "[html]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
 
       # Nix
       "nix" = {
-        "formatterPath" = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
         "enableLanguageServer" = true;
+        "formatterPath" = "${nixpkgs-fmt}/bin/nixpkgs-fmt";
         "serverPath" = "${rnix-lsp}/bin/rnix-lsp";
       };
       "[nix]" = {
-        "editor.tabSize" = 2;
         "editor.insertSpaces" = true;
+        "editor.tabSize" = 2;
       };
 
       # Rust
       "rust-analyzer.server.path" = "${rust-analyzer}/bin/rust-analyzer";
-
-      # Svelt
-      "svelte.enable-ts-plugin" = true;
     };
 
     extensions = with pkgs.vscode-extensions; [
@@ -73,9 +69,6 @@ in
       # Rust
       matklad.rust-analyzer
 
-      # Svelte
-      svelte.svelte-vscode
-
       # Markdown
       yzhang.markdown-all-in-one
 
@@ -83,11 +76,9 @@ in
       eamodio.gitlens
       editorconfig.editorconfig
       esbenp.prettier-vscode
-      usernamehw.errorlens
     ];
   };
 
-  home.packages = with pkgs; [
-    jetbrains-mono
-  ];
+  programs.vscode.userSettings.editor.fontFamily = "Jetbrains Mono";
+  home.packages = with pkgs; [ jetbrains-mono ];
 }
