@@ -11,7 +11,6 @@
 
     cleanTmpDir = true;
     consoleLogLevel = 7;
-    supportedFilesystems = [ "ntfs" ];
   };
 
   # Set your time zone.
