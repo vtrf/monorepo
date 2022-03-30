@@ -5,8 +5,6 @@
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     stable.url = "github:nixos/nixpkgs/nixos-21.11";
 
-    utils.url = "github:numtide/flake-utils";
-
     hardware.url = "github:NixOS/nixos-hardware";
     homeManager.inputs.nixpkgs.follows = "unstable";
     homeManager.url = "github:nix-community/home-manager";
@@ -123,16 +121,5 @@
       };
 
       templates = import ./templates;
-    } // inputs.utils.lib.eachDefaultSystem (system:
-      let pkgs = prelude.mkNixpkgs { inherit system; };
-      in
-      {
-        devShell = with pkgs; mkShell {
-          buildInputs = [
-            nixpkgs-fmt
-            rnix-lsp
-          ];
-        };
-      }
-    );
+    };
 }
