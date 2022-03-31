@@ -3,7 +3,6 @@
 
   inputs = {
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    stable.url = "github:nixos/nixpkgs/nixos-21.11";
 
     hardware.url = "github:NixOS/nixos-hardware";
     homeManager.inputs.nixpkgs.follows = "unstable";
@@ -13,7 +12,8 @@
   };
 
   outputs = { ... }@inputs:
-    let prelude = import ./prelude inputs;
+    let
+      prelude = import ./prelude inputs;
     in
     {
       nixosConfigurations = {
@@ -32,8 +32,8 @@
           ];
         };
 
-        t495 = prelude.mkHost {
-          host = "t495";
+        earth = prelude.mkHost {
+          host = "earth";
           system = "x86_64-linux";
           username = "victor";
           nixosModules = [
@@ -44,6 +44,7 @@
 
             ./hosts/t495/hardware-configuration.nix
 
+            inputs.agenix.nixosModule
             inputs.hardware.nixosModules.lenovo-thinkpad-t495
           ];
 
