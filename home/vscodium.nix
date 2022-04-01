@@ -14,7 +14,7 @@ in
       "editor.rulers" = [ 80 120 ];
       "workbench.tree.indent" = 15;
 
-      "workbench.colorTheme" = "Tomorrow Night";
+      "workbench.colorTheme" = "GitHub Dark";
       "workbench.iconTheme" = "material-icon-theme";
 
       "terminal.integrated.tabs.enabled" = true;
