@@ -8,13 +8,16 @@
 
   networking = {
     hostName = "mars";
-    firewall.enable = true;
     networkmanager.enable = true;
   };
 
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    passwordAuthentication = false;
+  services = {
+    openssh = {
+      enable = true;
+      passwordAuthentication = false;
+    };
   };
+
+  users.users.root.openssh.authorizedKeys.keys =
+    config.users.users.victor.openssh.authorizedKeys.keys;
 }
