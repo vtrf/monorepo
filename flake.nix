@@ -4,6 +4,9 @@
   inputs = {
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "unstable";
+
     hardware.url = "github:NixOS/nixos-hardware";
     homeManager.inputs.nixpkgs.follows = "unstable";
     homeManager.url = "github:nix-community/home-manager";
@@ -18,7 +21,7 @@
     {
       nixosConfigurations = {
         bootstrap = prelude.mkHost {
-          host = "t495";
+          host = "earth";
           system = "x86_64-linux";
           username = "victor";
           nixosModules = [
@@ -26,7 +29,7 @@
             ./nixos/nix.nix
             ./nixos/user.nix
 
-            ./hosts/t495/hardware-configuration.nix
+            ./hosts/earth/hardware-configuration.nix
 
             inputs.hardware.nixosModules.lenovo-thinkpad-t495
           ];
@@ -41,11 +44,12 @@
             ./nixos/cli.nix
             ./nixos/nix.nix
             ./nixos/user.nix
+            ./nixos/secrets/earth.nix
 
-            ./hosts/t495/hardware-configuration.nix
+            ./hosts/earth/hardware-configuration.nix
 
-            inputs.agenix.nixosModule
             inputs.hardware.nixosModules.lenovo-thinkpad-t495
+            inputs.agenix.nixosModule
           ];
 
           homeModules = [
@@ -69,8 +73,8 @@
           ];
         };
 
-        rpi3 = prelude.mkHost {
-          host = "rpi3";
+        mars = prelude.mkHost {
+          host = "mars";
           system = "aarch64-linux";
           username = "victor";
           nixosModules = [
@@ -78,10 +82,10 @@
             ./nixos/cli.nix
             ./nixos/nix.nix
             ./nixos/user.nix
-
-            ./hosts/rpi3
+            ./nixos/secrets/mars.nix
 
             "${inputs.unstable}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+            inputs.agenix.nixosModule
           ];
         };
       };
