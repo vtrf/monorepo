@@ -34,6 +34,11 @@ in
         url = "https://myme.no/feed.xml";
         tags = [ "tech" ];
       }
+      {
+        title = "Dhole Moments";
+        url = "https://soatok.blog/feed/";
+        tags = [ "tech" "security" ];
+      }
 
       # Aggregators
       {
