@@ -38,7 +38,6 @@
     };
   };
 
-  powerManagement.powertop.enable = true;
   services = {
     xserver = {
       enable = true;
