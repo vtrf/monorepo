@@ -62,7 +62,7 @@
             ./home/git.nix
             ./home/gui.nix
             ./home/home.nix
-            ./home/neovim.nix
+            ./home/neovim
             ./home/newsboat.nix
             ./home/rbw.nix
             ./home/vscodium.nix
@@ -105,7 +105,7 @@
             ./home/firefox.nix
             ./home/git.nix
             ./home/home.nix
-            ./home/neovim.nix
+            ./home/neovim
             ./home/newsboat.nix
             ./home/rbw.nix
             ./home/vscodium.nix
