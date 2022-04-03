@@ -5,7 +5,7 @@ let
   inherit (config.meta) username;
 in
 {
-  colorscheme = nixColors.colorSchemes.tomorrow-night;
+  colorscheme = nixColors.colorSchemes.monokai;
   fonts.fontconfig.enable = true;
 
   nix.registry.nixpkgs.flake = nixpkgs;

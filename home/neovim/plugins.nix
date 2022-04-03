@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
   inherit (pkgs)
@@ -7,17 +7,7 @@ let
     vimPlugins
     vimUtils;
 
-  github-nvim-theme = vimUtils.buildVimPlugin {
-    name = "github-nvim-theme";
-    src = fetchFromGitHub {
-      owner = "projekt0n";
-      repo = "github-nvim-theme";
-      rev = "v0.0.4";
-      sha256 = "sha256-tnHbM/oUHd/lJmz8VDREWiIRjbnjRx1ZksNh534mqzc=";
-    };
-
-    buildInputs = with pkgs; [ lua53Packages.luacheck ];
-  };
+  inherit (inputs.nixColors.lib { inherit pkgs; }) vimThemeFromScheme;
 
   cmp-nvim-lsp-signature-help = vimUtils.buildVimPlugin {
     name = "cmp-nvim-lsp-signature-help";
@@ -30,11 +20,17 @@ let
   };
 in
 with vimPlugins; [
+  # Theme
+  {
+    plugin = vimThemeFromScheme { scheme = config.colorscheme; };
+    config = "colorscheme nix-${config.colorscheme.slug}";
+  }
+
   # Lua libs
   plenary-nvim
   popup-nvim
 
-  vim-polyglot
+  # vim-polyglot
   telescope-nvim
 
   # lsp
@@ -52,13 +48,6 @@ with vimPlugins; [
   luasnip
   cmp_luasnip
 
-  {
-    plugin = github-nvim-theme;
-    type = "lua";
-    config = ''
-      require('github-theme').setup()
-    '';
-  }
   {
     plugin = todo-comments-nvim;
     type = "lua";

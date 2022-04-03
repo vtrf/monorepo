@@ -11,13 +11,11 @@ in
     vimAlias = true;
     vimdiffAlias = true;
 
-    plugins = pkgs.callPackage ./plugins.nix { };
+    plugins = pkgs.callPackage ./plugins.nix { inherit config pkgs inputs; };
 
-    # TODO: https://github.com/nix-community/home-manager/pull/2391
     extraConfig = ''
       lua require('init')
     '';
-
 
     extraPackages = with pkgs; [
       # LSPs

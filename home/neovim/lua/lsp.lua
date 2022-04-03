@@ -17,7 +17,6 @@ local servers = {
   { name = 'cssls', opts = {} },
   { name = 'gopls', opts = {} },
   { name = 'html', opts = {} },
-  { name = 'mdzk_ls', opts = {} },
   { name = 'pyright', opts = {} },
   { name = 'rnix', opts = {} },
   { name = 'rust_analyzer', opts = {} },
