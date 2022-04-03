@@ -62,6 +62,7 @@
             ./home/git.nix
             ./home/gui.nix
             ./home/home.nix
+            ./home/kitty.nix
             ./home/neovim
             ./home/newsboat.nix
             ./home/rbw.nix
