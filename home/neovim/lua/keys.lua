@@ -40,3 +40,6 @@ map{'<leader>pf', "<cmd>Telescope find_files<cr>"}
 map{'<leader>ps', "<cmd>Telescope live_grep<cr>"}
 map{'<leader>pt', "<cmd>TodoTelescope<cr>"}
 map{'<leader>ss', "<cmd>Telescope buffers<cr>"}
+
+-- LSP
+map{'<leader>lr', "<cmd>lua vim.lsp.buf.rename()<cr>", 'n', { noremap=true, silent=true }}
