@@ -84,7 +84,7 @@ in
       refresh-on-startup yes
 
       # display
-      feed-sort-order unreadarticlecount-asc
+      feed-sort-order lastupdated
       text-width         72
 
       # navigation
