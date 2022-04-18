@@ -14,7 +14,7 @@ in
       "editor.rulers" = [ 80 120 ];
       "workbench.tree.indent" = 15;
 
-      "workbench.colorTheme" = "GitHub Dark";
+      "workbench.colorTheme" = "Monokai";
       "workbench.iconTheme" = "material-icon-theme";
 
       "terminal.integrated.tabs.enabled" = true;
@@ -41,9 +41,7 @@ in
 
     extensions = with pkgs.vscode-extensions; [
       # themes
-      github.github-vscode-theme
       pkief.material-icon-theme
-      ms-vscode.theme-tomorrowkit
 
       # Angular
       angular.ng-template
