@@ -13,7 +13,7 @@ rec {
       config.allowUnfree = true;
       overlays = [
         inputs.nur.overlay
-        (import ../overlay)
+        (import ../overlay { inherit inputs system; })
       ];
     };
 

@@ -3,6 +3,7 @@
 
   inputs = {
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    master.url = "github:nixos/nixpkgs/master";
 
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "unstable";
@@ -53,6 +54,7 @@
           ];
 
           homeModules = [
+            ./home/aerc.nix
             ./home/bash.nix
             ./home/chromium.nix
             ./home/cli.nix
@@ -68,6 +70,7 @@
             ./home/rbw.nix
             ./home/vscodium.nix
 
+            ./modules/aerc.nix
             ./modules/meta.nix
 
             inputs.nixColors.homeManagerModule
