@@ -124,6 +124,10 @@
                 google-cloud-sdk
                 fzfpods
               ];
+
+              # can't run kitty without openGL so we just need its
+              # configuration files
+              programs.kitty.package = pkgs.hello;
             })
           ];
         };
