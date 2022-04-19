@@ -13,7 +13,11 @@ in
 
     settings = {
       disable_ligatures = "always";
+      enable_audio_bell = "no";
+      enabled_layouts = "tall:bias=50;full_size=1;mirrored=false";
       window_padding_width = 2;
+
+      # colors
       foreground = "#${colors.base05}";
       background = "#${colors.base00}";
       selection_background = "#${colors.base05}";
