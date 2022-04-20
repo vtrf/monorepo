@@ -57,13 +57,13 @@
     '';
 
     profileExtra = ''
-
       [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && . $HOME/.nix-profile/etc/profile.d/nix.sh
 
       # useful for showing icons on non-NixOS systems
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
 
       [ -d "$HOME/.local/bin" ] && export PATH=$PATH:$HOME/.local/bin
+      [ -d "$HOME/.poetry/bin" ] && export PATH=$PATH:$HOME/.poetry/bin
       [ -d "$HOME/go/bin" ] && export PATH=$PATH:$HOME/go/bin
     '';
   };
