@@ -36,5 +36,10 @@ in
         };
       };
     };
+    extraConfig = {
+        merge = {
+            conflictstyle = "diff3";
+        };
+    };
   };
 }
