@@ -12,6 +12,7 @@ in
         timestamp-format = "2006-01-02 03:04 PM";
 
         mouse-enabled = true;
+        sidebar-width = 25;
         sort = "-r date";
         spinner = ",|,/,-";
       };
@@ -52,6 +53,7 @@ in
 
       "msglist_unread.bold" = true;
       "msglist_deleted.fg" = "gray";
+      "msglist_read.fg" = "#${c.base03}";
 
       "completion_pill.reverse" = true;
 
@@ -63,7 +65,9 @@ in
     };
     queryMaps = [
       "Inbox=tag:inbox and not tag:archived"
-      "Github=tag:github and not tag:archived"
+      "GitHub=tag:github and not tag:archived"
+      "Banking=tag:banking and not tag:archived"
+      "SourceHut=tag:sourcehut and not tag:archived"
     ];
   };
 }
