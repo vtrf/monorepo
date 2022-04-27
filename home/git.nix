@@ -11,6 +11,8 @@ in
     userName = name;
     userEmail = email;
 
+    ignores = [ "result" ];
+
     aliases = {
       ca = "commit --amend";
       cm = "commit -m";
