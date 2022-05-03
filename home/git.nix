@@ -39,9 +39,9 @@ in
       };
     };
     extraConfig = {
-        merge = {
-            conflictstyle = "diff3";
-        };
+      merge = {
+        conflictstyle = "diff3";
+      };
     };
   };
 }
