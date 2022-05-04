@@ -83,12 +83,11 @@
           username = "victor";
           nixosModules = [
             ./modules/meta.nix
-            ./nixos/cli.nix
             ./nixos/nix.nix
             ./nixos/user.nix
-            ./nixos/secrets/mars.nix
+            # ./nixos/secrets/mars.nix
 
-            "${inputs.unstable}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+            inputs.hardware.nixosModules.raspberry-pi-4
             inputs.agenix.nixosModule
           ];
         };
