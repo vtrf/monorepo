@@ -107,6 +107,7 @@
             ./home/firefox.nix
             ./home/git.nix
             ./home/home.nix
+            ./home/kitty.nix
             ./home/neovim
             ./home/newsboat.nix
             ./home/rbw.nix
@@ -118,6 +119,7 @@
 
             ({ pkgs, ... }: {
               home.packages = with pkgs; [
+                awscli2
                 kubectl
                 google-cloud-sdk
                 fzfpods
