@@ -8,8 +8,7 @@ in
     enable = true;
     package = pkgs.vscodium;
     userSettings = {
-      # auto update tags when edited
-      "editor.formatOnSave" = true;
+      "editor.formatOnSave" = false;
       "editor.linkedEditing" = true;
       "editor.rulers" = [ 80 120 ];
       "workbench.tree.indent" = 15;
@@ -74,6 +73,7 @@ in
       eamodio.gitlens
       editorconfig.editorconfig
       esbenp.prettier-vscode
+      gruntfuggly.todo-tree
     ];
   };
 
