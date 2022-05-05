@@ -15,6 +15,11 @@ in
         tags = [ "tech" ];
       }
       {
+        title = "SourceHut";
+        url = "https://sourcehut.org/blog/index.xml";
+        tags = [ "tech" ];
+      }
+      {
         title = "The Go Programming Language Blog";
         url = "https://go.dev/blog/feed.atom?format=xml";
         tags = [ "tech" "go" ];
