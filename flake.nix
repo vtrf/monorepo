@@ -22,7 +22,7 @@
     {
       nixosConfigurations = {
         bootstrap = prelude.mkHost {
-          host = "earth";
+          host = "t495";
           system = "x86_64-linux";
           username = "victor";
           nixosModules = [
@@ -30,14 +30,14 @@
             ./nixos/nix.nix
             ./nixos/user.nix
 
-            ./hosts/earth/hardware-configuration.nix
+            ./hosts/t495/hardware-configuration.nix
 
             inputs.hardware.nixosModules.lenovo-thinkpad-t495
           ];
         };
 
-        earth = prelude.mkHost {
-          host = "earth";
+        t495 = prelude.mkHost {
+          host = "t495";
           system = "x86_64-linux";
           username = "victor";
           nixosModules = [
@@ -45,9 +45,9 @@
             ./nixos/cli.nix
             ./nixos/nix.nix
             ./nixos/user.nix
-            ./nixos/secrets/earth.nix
+            ./nixos/secrets/t495.nix
 
-            ./hosts/earth/hardware-configuration.nix
+            ./hosts/t495/hardware-configuration.nix
 
             inputs.hardware.nixosModules.lenovo-thinkpad-t495
             inputs.agenix.nixosModule
@@ -77,15 +77,14 @@
           ];
         };
 
-        mars = prelude.mkHost {
-          host = "mars";
+        rpi4 = prelude.mkHost {
+          host = "rpi4";
           system = "aarch64-linux";
           username = "victor";
           nixosModules = [
             ./modules/meta.nix
             ./nixos/nix.nix
             ./nixos/user.nix
-            # ./nixos/secrets/mars.nix
 
             inputs.hardware.nixosModules.raspberry-pi-4
             inputs.agenix.nixosModule

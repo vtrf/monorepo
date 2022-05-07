@@ -17,7 +17,7 @@
   time.timeZone = "America/Sao_Paulo";
 
   networking = {
-    hostName = "earth";
+    hostName = "t495";
     networkmanager.enable = true;
   };
 
