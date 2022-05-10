@@ -5,6 +5,8 @@ let
   dendriteServerName = dendrite.settings.global.server_name;
   connectionString = "postgres://dendrite:dendrite@127.0.0.1/dendrite?sslmode=disable";
   federationPort = 8448;
+
+  pow = base: exp: foldl' (a: x: x * a) 1 (genList (_: base) exp);
 in
 {
   services.dendrite = {
@@ -22,6 +24,9 @@ in
       user_api.device_database.connection_string = connectionString;
 
       client_api.registration_disabled = true;
+
+      # 2 megabytes in bytes
+      media_api.max_file_size_bytes = 2097152;
 
       mscs.mscs = [
         # threading
