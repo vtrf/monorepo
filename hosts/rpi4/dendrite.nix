@@ -5,8 +5,6 @@ let
   dendriteServerName = dendrite.settings.global.server_name;
   connectionString = "postgres://dendrite:dendrite@127.0.0.1/dendrite?sslmode=disable";
   federationPort = 8448;
-
-  pow = base: exp: foldl' (a: x: x * a) 1 (genList (_: base) exp);
 in
 {
   services.dendrite = {
