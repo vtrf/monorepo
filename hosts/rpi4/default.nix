@@ -21,12 +21,11 @@ in
       };
 
       grub.enable = false;
-      generic-extlinux-compatible.enable = true;
+      generic-extlinux-compatible.enable = false;
     };
   };
 
   hardware.enableRedistributableFirmware = true;
-
   networking = {
     hostName = "rpi4";
     networkmanager.enable = true;
@@ -37,6 +36,7 @@ in
       enable = true;
       passwordAuthentication = false;
     };
+    hardware.argonone.enable = true;
   };
 
   users.users.root.openssh.authorizedKeys.keys =

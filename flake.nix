@@ -83,8 +83,16 @@
           username = "victor";
           nixosModules = [
             ./modules/meta.nix
+            ./modules/argonone.nix
             ./nixos/nix.nix
             ./nixos/user.nix
+
+            ./hosts/rpi4/dendrite.nix
+            ./hosts/rpi4/nginx.nix
+            ./hosts/rpi4/postgres.nix
+            ./hosts/rpi4/hardware-configuration.nix
+
+            ./nixos/secrets/rpi4.nix
 
             inputs.hardware.nixosModules.raspberry-pi-4
             inputs.agenix.nixosModule
