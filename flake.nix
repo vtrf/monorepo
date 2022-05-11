@@ -10,10 +10,12 @@
     inputs.utils.lib.eachDefaultSystem (system:
       let
         pkgs = import inputs.nixpkgs { inherit system; };
-        inherit (pkgs) callPackage;
+        inherit (pkgs) callPackage lib;
 
         glorifiedgluercom = callPackage ./glorifiedgluercom { inherit pkgs; };
         mata = callPackage ./mata { inherit pkgs; };
       in
-      glorifiedgluercom // mata);
+      lib.recursiveUpdate
+        glorifiedgluercom
+        mata);
 }
