@@ -25,7 +25,7 @@ in
   };
 
   packages.glorifiedgluercom = stdenv.mkDerivation {
-    name = "blog";
+    name = "glorifiedgluercom";
     src = lib.cleanSource ./.;
 
     buildInputs = [ hugo ];
