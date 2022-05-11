@@ -1,0 +1,22 @@
+title = "~glorifiedgluer"
+baseURL = "https://glorifiedgluer.com"
+languageCode = "en-us"
+
+pygmentsUseClasses = true
+assetDir = "static"
+
+[permalinks]
+  blog = '/blog/:year/:slug/'
+
+[author]
+	name = "Victor Freire"
+
+[outputFormats.RSS]
+	mediaType = "application/rss+xml"
+	baseName = "rss"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.tableOfContents]
+ordered = true

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+    <head>
+        <title>~glorifiedgluer feed</title>
+    </head>
+    <body>
+        <outline title="Blogs" text="Blogs I personally like to read">
+            <outline
+                title="kmaasrud"
+                text="Magnus is a friend of mine. Such an interesting guy with interesting ideas."
+                type="rss"
+                xmlUrl="https://kmaasrud.com/blog/index.xml"
+                htmlUrl="https://kmaasrud.com/blog" />
+            <outline
+                title="Drew Devault"
+                text=""
+                type="rss"
+                xmlUrl="https://drewdevault.com/blog/index.xml"
+                htmlUrl="https://drewdevault.com" />
+            <outline
+                title="emersion"
+                text=""
+                type="atom"
+                xmlUrl="https://emersion.fr/blog/atom.xml"
+                htmlUrl="https://emersion.fr/blog" />
+            <outline
+                title="Julia Evans"
+                text=""
+                type="atom"
+                xmlUrl="https://jvns.ca/atom.xml"
+                htmlUrl="https://jvns.ca/" />
+            <outline
+                title="Paperless"
+                text=""
+                type="atom"
+                xmlUrl="https://paperless.blog/feed.xml"
+                htmlUrl="https://paperless.blog" />
+            <outline
+                title="research!rsc"
+                text="Thoughts and links about programming, by [Russ Cox](https://swtch.com/~rsc/)."
+                type="atom"
+                xmlUrl="https://research.swtch.com/feed.atom"
+                htmlUrl="https://research.swtch.com/" />
+            <outline
+                title="Xe"
+                text=""
+                type="rss"
+                xmlUrl="https://christine.website/blog.rss"
+                htmlUrl="https://christine.website/blog" />
+        </outline>
+
+        <outline title="Open Source Projects" text="Projects to watch closely">
+            <outline
+                title="Go Programming Language Blog"
+                text=""
+                type="atom"
+                xmlUrl="https://go.dev/blog/feed.atom?format=xml"
+                htmlUrl="https://go.dev/blog/feed.atom?format=xml" />
+            <outline
+                title="NixOS News"
+                text=""
+                type="rss"
+                xmlUrl="https://nixos.org/blog/announcements-rss.xml"
+                htmlUrl="https://nixos.org/news.html" />
+            <outline
+                title="This Week in GNOME"
+                text=""
+                type="rss"
+                xmlUrl="https://thisweek.gnome.org/index.xml"
+                htmlUrl="https://thisweek.gnome.org" />
+            <outline
+                title="sourcehut"
+                text=""
+                type="rss"
+                xmlUrl="https://sourcehut.org/blog/index.xml"
+                htmlUrl="https://sourcehut.org/blog" />
+        </outline>
+    </body>
+</opml>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {{ range .AlternativeOutputFormats -}}
+			<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}" />
+		{{ end -}}
+
+    <title>{{ .Site.Title }}</title>
+    {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify
+    | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+    {{ template "_internal/opengraph.html" . }}
+  </head>
+  {{ partial "nav.html" }}
+  <main>
+    <h2>Posts</h2>
+    <p><a href="rss.xml">RSS feed</a></p>
+    {{ range .Data.Pages }}
+    <div class="stub">
+      <h2>
+        <a href="{{.Permalink}}"> {{.Title}} </a>
+      </h2>
+      <small> {{.Date.Format "January 2, 2006"}} by {{.Params.author}} </small>
+    </div>
+    {{ end }}
+    <main></main>
+  </main>
+</html>

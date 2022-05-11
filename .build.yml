@@ -1,0 +1,31 @@
+image: nixos/unstable
+oauth: pages.sr.ht/PAGES:RW
+secrets:
+  - 1cc83501-b3f6-496d-ad90-8f9f1c295580
+sources:
+  - git@git.sr.ht:~glorifiedgluer/monorepo
+environment:
+  NIX_CONFIG: "experimental-features = nix-command flakes"
+tasks:
+  - check_branch: |
+      cd monorepo
+      if [ "$(git rev-parse main)" != "$(git rev-parse HEAD)" ]; then \
+        complete-build; \
+      fi
+  - glorifiedgluercom: |
+      cd monorepo
+      if ! $(git diff --quiet HEAD HEAD^ -- "glorifiedgluercom")
+      then
+        nix build .#glorifiedgluercom
+        nix develop .#glorifiedgluercom-ci -c hut pages publish ./result/site.tar.gz \
+          --domain glorifiedgluer.com \
+          --not-found 404.html
+      fi
+  - mata: |
+      cd monorepo
+      if ! $(git diff --quiet HEAD HEAD^ -- "mata")
+      then
+        (cd mata && nix develop .#mata-ci -c make lint)
+        (cd mata && nix develop .#mata-ci -c make test)
+        nix build .#mata
+      fi
