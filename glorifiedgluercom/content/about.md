@@ -3,7 +3,6 @@ title: About
 summary: |
   About this site and me.
 ---
-
 # About me
 
 I'm **Victor Freire**, a student and software developer based in **Guarulhos,
@@ -33,6 +32,6 @@ while producing its content.
 
 - Icon made by my beloved nana
 - Generated using [Hugo](https://hugo.io), theme inspired by [The Hare programming language website](https://harelang.org)
-- Source code at [sourcehut](https://git.sr.ht/~glorifiedgluer/glorifiedgluer.com)
-- Built with [Nix](https://nixos.org) and [builds.sr.ht](https://builds.sr.ht/~glorifiedgluer/glorifiedgluer.com)
+- Source code at [sourcehut](https://git.sr.ht/~glorifiedgluer/monorepo/tree/main/item/glorifiedgluercom)
+- Built with [Nix](https://nixos.org) and [builds.sr.ht](https://builds.sr.ht/~glorifiedgluer/monorepo)
 - Hosted at [pages.sr.ht](https://srht.site/)
