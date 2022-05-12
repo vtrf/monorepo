@@ -66,9 +66,9 @@ of passion/need. So the rationale above is composed of things that personally
 took out part of the joy of bulding out
 something and seeing it run.
 
-Is this going to work? I have no idea as I don't much experience with monorepos.
-I'm not really sure if this is going to scale or bore me in other ways. The only
-certainty I have is that I'm having fun doing it _right now_!
+Is this going to work? I have no idea as I don't have much experience with
+monorepos. I'm not really sure if this is going to scale or bore me in other
+ways. The only certainty I have is that I'm having fun doing it _right now_!
 
 [^1]: https://blog.replit.com/nix
 [^2]: https://shopify.engineering/what-is-nix
