@@ -9,9 +9,9 @@ summary: |
   Starting my journey with a personal monorepo managed by Nix.
 ---
 I've been using [Nix][] as my package manager for 4 years now and it has been
-the best _computer-related_ decision I have ever made! However, for the past few
-years its ecosystem has been growing a lot[^1] [^2] [^3]. Some of this movement
-is due to the advent o [Flakes][] that makes it _way_ easier to share
+the best _computer-related_ decision I have ever made and fortunately, for the
+past few years its ecosystem has been growing a lot[^1] [^2] [^3]. Some of this
+movement is due to the advent o [Flakes][] that makes it _way_ easier to share
 reproducible outputs than the previous Nix solution of channels.
 
 Considering that I can use Nix:
