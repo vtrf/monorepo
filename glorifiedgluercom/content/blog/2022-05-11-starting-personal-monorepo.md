@@ -70,6 +70,11 @@ Is this going to work? I have no idea as I don't have much experience with
 monorepos. I'm not really sure if this is going to scale or bore me in other
 ways. The only certainty I have is that I'm having fun doing it _right now_!
 
+You can see the repository on the links below:
+
+- [GitHub](https://github.com/ratsclub/monorepo)
+- [sourcehut](https://git.sr.ht/~glorifiedgluer/monorepo/)
+
 [^1]: https://blog.replit.com/nix
 [^2]: https://shopify.engineering/what-is-nix
 [^3]: https://hercules-ci.com/
