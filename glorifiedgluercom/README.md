@@ -1,3 +1,4 @@
 # glorifiedgluer.com
 
-What is this all [about](./content/about.md)?
+Home to [glorifiedgluer.com](https://glorifiedgluer.com). Check out the 
+[about](./content/about.md).
