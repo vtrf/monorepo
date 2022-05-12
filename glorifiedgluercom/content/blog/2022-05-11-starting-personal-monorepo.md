@@ -11,7 +11,7 @@ summary: |
 I've been using [Nix][] as my package manager for 4 years now and it has been
 the best _computer-related_ decision I have ever made! However, for the past few
 years its ecosystem has been growing a lot[^1] [^2] [^3]. Some of this movement
-is due to the advent o [Flakes][] that makes it _way_ easier to share 
+is due to the advent o [Flakes][] that makes it _way_ easier to share
 reproducible outputs than the previous Nix solution of channels.
 
 Considering that I can use Nix:
@@ -34,11 +34,11 @@ coding already.
 
 Most of my personal projects are written in [Go](https://go.dev), a really
 boring language that takes its time to include new features and release new
-versions. This means that an update won't break them and that I can take 
+versions. This means that an update won't break them and that I can take
 advantage of a way to share the same compiler and tooling version through
 my projects.
 
-If you're a Nix user, a single command would show you all the outputs available 
+If you're a Nix user, a single command would show you all the outputs available
 for use: `nix flake show sourcehut:~glorifiedgluer/monorepo`. This also means
 that you can import this repo as an input on your `flake.nix` file and use any
 of my projects as you please.
@@ -60,9 +60,10 @@ new challenges with version control and build systems! ;-)
 
 # Expectation
 
-I don't expect my projects to become something used by hundreds or thousands of
-users as most of them are done out of passion/need. So the rationale above is
-composed of things that personally took out part of the joy of bulding out
+I mean... none? lol. Being serious now, I don't expect my projects to become
+something used by hundreds or thousands of users as most of them are done out
+of passion/need. So the rationale above is composed of things that personally
+took out part of the joy of bulding out
 something and seeing it run.
 
 Is this going to work? I have no idea as I don't much experience with monorepos.
