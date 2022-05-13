@@ -7,28 +7,17 @@ summary: CLI tool for mataroa.blog
 
 Run `mata init` to get started. Read the man page to learn about all commands.
 
-## Table of Contents
-
-- [Usage](#usage)
-- [Table of Contents](#table-of-contents)
-- [Documentation](#documentation)
-- [Building](#building)
-  - [From Source](#from-source)
-  - [From Nix](#from-nix)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Documentation
 
-Also available as man pages:
+Also available as a man page:
 
-<!-- TODO: write man pages with scdoc -->
+- [mata(1)](https://git.sr.ht/~glorifiedgluer/monorepo/tree/main/item/mata/doc/mata.1.scd)
 
 ## Building
 
 Dependencies (not needed for Nix users):
 
-- [Go][]
+- [Go][] 1.17 or later
 - [scdoc][] (optional, for man pages)
 
 ### From Source
@@ -44,23 +33,27 @@ make install
 
 Dependencies:
 
-- Nix 2.4 or later
-
-You can build and run from your machine with the following:
+- Nix 2.4 to 2.7
 
 ```
-nix run sourcehut:~glorifiedgluer/mata
+nix run git+https://git.sr.ht/~glorifiedgluer/monorepo?ref=main#mata
+```
+
+- Nix 2.8 or later
+
+```
+nix run sourcehut:~glorifiedgluer/monorepo#mata
 ```
 
 ## Contributing
 
-<!-- TODO: add contributing section -->
+You can find me on IRC: [#mdzk on Libera Chat](ircs://irc.libera.chat/#mdzk).
 
-## License
+# License
 
 MIT, see [LICENSE](https://git.sr.ht/~glorifiedgluer/mata/tree/master/LICENSE).
 
 Copyright (C) 2022 Victor Freire
 
-[scdoc]: https://git.sr.ht/~sircmpwn/scdoc
 [go]: https://go.dev
+[scdoc]: https://git.sr.ht/~sircmpwn/scdoc
