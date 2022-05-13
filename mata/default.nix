@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, utils, ... }:
 
 let
   inherit (pkgs)
@@ -22,6 +22,7 @@ let
   name = "mata";
 in
 rec {
+  apps.mata = utils.lib.mkApp { drv = packages.mata; };
   packages.mata = buildGoModule {
     inherit name;
     src = lib.cleanSource ./.;
@@ -52,7 +53,6 @@ rec {
     };
   };
 
-  apps.mata = packages.mata;
   devShells = {
     mata = mkShell {
       buildInputs = [
