@@ -1,6 +1,6 @@
 # mata
 
-[mata](https://git.sr.ht/~glorifiedgluer/mata) is CLI tool for [mataroa.blog](https://mataroa.blog).
+[mata](https://git.sr.ht/~glorifiedgluer/monorepo/tree/main/item/mata/) is CLI tool for [mataroa.blog](https://mataroa.blog).
 
 # Table of Contents
 
@@ -28,8 +28,8 @@ Also available as a man page:
 
 Dependencies (not needed for Nix users):
 
-- Go
-- Pandoc (optional, for man pages)
+- [Go][] 1.17 or later
+- [scdoc][] (optional, for man pages)
 
 ### From Source
 
@@ -44,12 +44,16 @@ make install
 
 Dependencies:
 
-- Nix 2.4 or later
-
-You can build and run from your machine with the following:
+- Nix 2.4 to 2.7
 
 ```
-nix run sourcehut:~glorifiedgluer/mata
+nix run git+https://git.sr.ht/~glorifiedgluer/monorepo?ref=main#mata
+```
+
+- Nix 2.8 or later
+
+```
+nix run sourcehut:~glorifiedgluer/monorepo#mata
 ```
 
 ## Contributing
@@ -61,3 +65,6 @@ You can find me on IRC: [#mdzk on Libera Chat](ircs://irc.libera.chat/#mdzk).
 MIT, see [LICENSE](https://git.sr.ht/~glorifiedgluer/mata/tree/master/LICENSE).
 
 Copyright (C) 2022 Victor Freire
+
+[go]: https://go.dev
+[scdoc]: https://git.sr.ht/~sircmpwn/scdoc
