@@ -15,7 +15,9 @@
         glorifiedgluercom = callPackage ./glorifiedgluercom { inherit pkgs utils; };
         mata = callPackage ./mata { inherit pkgs utils; };
       in
-      lib.recursiveUpdate
+      lib.foldr (atrrset: acc: lib.recursiveUpdate atrrset acc)
+        { } [
         glorifiedgluercom
-        mata);
+        mata
+      ]);
 }
