@@ -29,7 +29,7 @@ rec {
 
     nativeBuildInputs = [ scdoc ];
 
-    vendorSha256 = "sha256-SECdzyGB4uIea9dqwdVlINE7RGg69KIgZa4eW9CPkAc=";
+    vendorSha256 = "sha256-4gbUCQXdqBt1m5mvSeG7UjL5IZyYjoNtDmHHJX6mboQ=";
 
     subPackages = [ "cmd/mata" ];
 
