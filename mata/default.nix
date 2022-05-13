@@ -16,7 +16,7 @@ let
     gopls
     gotests
     impl
-    pandoc
+    scdoc
     ;
 
   name = "mata";
@@ -27,9 +27,9 @@ rec {
     inherit name;
     src = lib.cleanSource ./.;
 
-    nativeBuildInputs = [ pandoc ];
+    nativeBuildInputs = [ scdoc ];
 
-    vendorSha256 = "sha256-Dw0bIIssEd8UEh+pnd+Nk7RP72+HvHTGwJlOpCOQRG8=";
+    vendorSha256 = "sha256-SECdzyGB4uIea9dqwdVlINE7RGg69KIgZa4eW9CPkAc=";
 
     subPackages = [ "cmd/mata" ];
 
@@ -56,17 +56,17 @@ rec {
   devShells = {
     mata = mkShell {
       buildInputs = [
+        delve
         gnumake
         go
-        pandoc
-        delve
         go-outline
         golangci-lint
         gomodifytags
-        gopls
         gopkgs
+        gopls
         gotests
         impl
+        scdoc
       ];
     };
 

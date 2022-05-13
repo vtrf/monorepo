@@ -98,7 +98,7 @@ func newSyncCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:     "sync",
 		Aliases: []string{"s"},
-		Short:   "sync all your posts",
+		Short:   "Sync all your posts",
 		Args:    cobra.ExactArgs(0),
 		Run:     run,
 	}

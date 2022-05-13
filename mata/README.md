@@ -20,10 +20,9 @@ Run `mata init` to get started. Read the man page to learn about all commands.
 
 ## Documentation
 
-Also available as man pages:
+Also available as a man page:
 
-- [mata(1)](https://git.sr.ht/~glorifiedgluer/mata/tree/master/item/doc/mata.1.scd)
-- [mata-config(5)](https://git.sr.ht/~glorifiedgluer/mata/tree/master/item/doc/mata-config.5.scd)
+- [mata(1)](https://git.sr.ht/~glorifiedgluer/monorepo/tree/main/item/mata/doc/mata.1.scd)
 
 ## Building
 

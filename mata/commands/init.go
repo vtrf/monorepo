@@ -44,7 +44,7 @@ func newInitCommand() *cobra.Command {
 
 	cmd := &cobra.Command{
 		Use:   "init",
-		Short: "Initialize mata",
+		Short: "Initialize mata's configuration file.",
 		Args:  cobra.ExactArgs(0),
 		Run:   run,
 	}
