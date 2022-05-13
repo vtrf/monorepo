@@ -6,14 +6,14 @@
     utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, ... }@inputs:
-    inputs.utils.lib.eachDefaultSystem (system:
+  outputs = { self, nixpkgs, utils, ... }:
+    utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import inputs.nixpkgs { inherit system; };
+        pkgs = import nixpkgs { inherit system; };
         inherit (pkgs) callPackage lib;
 
-        glorifiedgluercom = callPackage ./glorifiedgluercom { inherit pkgs; };
-        mata = callPackage ./mata { inherit pkgs; };
+        glorifiedgluercom = callPackage ./glorifiedgluercom { inherit pkgs utils; };
+        mata = callPackage ./mata { inherit pkgs utils; };
       in
       lib.recursiveUpdate
         glorifiedgluercom
