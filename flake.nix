@@ -12,12 +12,12 @@
         pkgs = import nixpkgs { inherit system; };
         inherit (pkgs) callPackage lib;
 
-        glorifiedgluercom = callPackage ./glorifiedgluercom { inherit pkgs utils; };
-        mata = callPackage ./mata { inherit pkgs utils; };
+        projects = builtins.map (value: callPackage value { inherit pkgs utils; }) [
+          ./glorifiedgluercom
+          ./mata
+        ];
       in
       lib.foldr (atrrset: acc: lib.recursiveUpdate atrrset acc)
-        { } [
-        glorifiedgluercom
-        mata
-      ]);
+        { }
+        projects);
 }
