@@ -64,6 +64,7 @@
             ./home/git.nix
             ./home/gui.nix
             ./home/home.nix
+            ./home/jetbrains.nix
             ./home/kitty.nix
             ./home/neovim
             ./home/newsboat.nix
