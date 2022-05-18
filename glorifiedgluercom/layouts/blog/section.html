@@ -18,7 +18,7 @@
   {{ partial "nav.html" }}
   <main>
     <h2>Posts</h2>
-    <p><a href="rss.xml">RSS feed</a></p>
+    <p><a href="{{.Site.BaseURL}}/blog/atom.xml">RSS feed</a></p>
     {{ range .Data.Pages }}
     <div class="stub">
       <h2>

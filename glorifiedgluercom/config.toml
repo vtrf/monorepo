@@ -5,11 +5,22 @@ languageCode = "en-us"
 pygmentsUseClasses = true
 assetDir = "static"
 
+[outputs]
+  section = ["HTML", "ATOM"]
+
 [permalinks]
   blog = '/blog/:year/:slug/'
 
 [author]
 	name = "Victor Freire"
+
+[mediaTypes."application/atom+xml"]
+  suffixes = ["xml"]
+
+[outputFormats.Atom]
+  name = "Atom"
+  mediaType = "application/atom+xml"
+  baseName = "atom"
 
 [outputFormats.RSS]
 	mediaType = "application/rss+xml"
