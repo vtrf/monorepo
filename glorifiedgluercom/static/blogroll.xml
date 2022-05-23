@@ -9,7 +9,7 @@
                 title="kmaasrud"
                 text="Magnus is a friend of mine. Such an interesting guy with interesting ideas."
                 type="rss"
-                xmlUrl="https://kmaasrud.com/blog/index.xml"
+                xmlUrl="https://kmaasrud.com/blog/rss.xml"
                 htmlUrl="https://kmaasrud.com/blog" />
             <outline
                 title="Drew Devault"
