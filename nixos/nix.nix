@@ -7,7 +7,7 @@
 
 {
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nix;
 
     nixPath = [
       "nixpkgs=/etc/nix/channels/nixpkgs"

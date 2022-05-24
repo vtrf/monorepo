@@ -31,7 +31,6 @@
 
   programs = {
     dconf.enable = true;
-    noisetorch.enable = true;
     kdeconnect = {
       enable = true;
       package = pkgs.gnomeExtensions.gsconnect;
