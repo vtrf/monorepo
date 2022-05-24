@@ -7,6 +7,10 @@
       efi.canTouchEfiVariables = true;
     };
 
+    extraModprobeConfig = ''
+      options hid_apple fnmode=0
+    '';
+
     binfmt.emulatedSystems = [ "aarch64-linux" ];
 
     cleanTmpDir = true;
@@ -14,7 +18,10 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/Sao_Paulo";
+  time = {
+    timeZone = "America/Sao_Paulo";
+    hardwareClockInLocalTime = true;
+  };
 
   networking = {
     hostName = "t495";
