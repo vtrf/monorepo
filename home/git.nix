@@ -39,6 +39,7 @@ in
       };
     };
     extraConfig = {
+      rerere.enabled = true;
       merge = {
         conflictstyle = "diff3";
       };
