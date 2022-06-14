@@ -8,6 +8,7 @@ in
     enable = true;
     package = pkgs.vscodium;
     userSettings = {
+      "update.mode" = "none";
       "editor.formatOnSave" = false;
       "editor.linkedEditing" = true;
       "editor.rulers" = [ 80 120 ];
