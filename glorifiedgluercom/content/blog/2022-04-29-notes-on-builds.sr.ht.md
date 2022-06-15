@@ -2,7 +2,6 @@
 title: "Notes on builds.sr.ht"
 slug: "notes-on-buildssrht"
 date: "2022-04-29"
-author: "freire"
 summary: |
   I quite like builds.sr.ht and want to share some of the reasons.
 ---

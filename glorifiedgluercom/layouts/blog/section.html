@@ -24,7 +24,12 @@
       <h2>
         <a href="{{.Permalink}}"> {{.Title}} </a>
       </h2>
-      <small> {{.Date.Format "January 2, 2006"}} by {{.Params.author}} </small>
+      <small>
+        {{.Date.Format "January 2, 2006"}}
+        {{ with .Params.author }}
+          by {{ . }}
+        {{ end }}
+      </small>
     </div>
     {{ end }}
     <main></main>

@@ -2,7 +2,6 @@
 title: "write: broken pipe"
 slug: "write-broken-pipe"
 date: "2022-04-06"
-author: "freire"
 summary: |
   The adventure of figuring out the "tcp: write: broken pipe" error.
 ---

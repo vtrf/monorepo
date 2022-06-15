@@ -2,7 +2,6 @@
 title: "Running a Raspberry Pi 4 with NixOS"
 slug: "running-a-raspberry-pi-4-with-nixos"
 date: "2022-05-09"
-author: "freire"
 summary: |
   Configuring and running NixOS on a Raspberry Pi 4.
 ---

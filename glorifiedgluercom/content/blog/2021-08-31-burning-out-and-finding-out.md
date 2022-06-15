@@ -2,7 +2,6 @@
 title: "Burning out and finding out"
 slut: "burning-out-and-finding-out"
 date: "2021-08-31"
-author: "freire"
 summary: |
   On being burnout for the first time.
 ---

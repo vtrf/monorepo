@@ -15,7 +15,12 @@
   <main>
     <h2>
       {{.Title}}
-      <small> {{.Date.Format "January 2, 2006"}} by {{.Params.author}} </small>
+      <small>
+        {{.Date.Format "January 2, 2006"}}
+        {{ with .Params.author }}
+          by {{ . }}
+        {{ end }}
+      </small>
     </h2>
     {{.Content}}
     <main></main>

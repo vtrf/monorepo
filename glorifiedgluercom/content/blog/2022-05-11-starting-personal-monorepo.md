@@ -2,7 +2,6 @@
 title: "Starting a personal monorepo"
 slug: "starting-personal-monorepo"
 date: "2022-05-11"
-author: "freire"
 tags:
   - nix
 summary: |

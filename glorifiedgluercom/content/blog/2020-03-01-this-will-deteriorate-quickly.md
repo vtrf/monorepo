@@ -2,7 +2,6 @@
 title: "This will deteriorate quickly"
 slug: "this-will-deteriorate-quickly"
 date: "2020-03-01"
-author: "freire"
 summary: |
   Thoughts about the current state of the web, content consuming and its longevity.
 ---
