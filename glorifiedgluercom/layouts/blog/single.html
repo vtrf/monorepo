@@ -22,6 +22,12 @@
         {{ end }}
       </small>
     </h2>
+
+    {{ if .Params.toc }}
+      <h2>Table of Contents</h2>
+      {{ .TableOfContents }}
+    {{ end }}
+
     {{.Content}}
     <main></main>
   </main>
