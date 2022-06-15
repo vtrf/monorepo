@@ -7,7 +7,6 @@ summary: |
 tags:
   - nix
   - git
-toc: true
 ---
 For the past few years I have been collecting contributions to multiple projects
 on multiple platforms such as GitHub, GitLab, self-hosted Gitea instances and so
