@@ -7,7 +7,7 @@ let
     vimPlugins
     vimUtils;
 
-  inherit (inputs.nixColors.lib { inherit pkgs; }) vimThemeFromScheme;
+  inherit (inputs.nixColors.lib-contrib { inherit pkgs; }) vimThemeFromScheme;
 
   cmp-nvim-lsp-signature-help = vimUtils.buildVimPlugin {
     name = "cmp-nvim-lsp-signature-help";
