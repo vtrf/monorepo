@@ -41,4 +41,6 @@ in
 
   users.users.root.openssh.authorizedKeys.keys =
     config.users.users."${username}".openssh.authorizedKeys.keys;
+
+  system.stateVersion = "22.11";
 }
