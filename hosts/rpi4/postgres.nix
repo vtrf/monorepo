@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  systemd.services.dendrite.after = [
+    "network.target"
+    "postgresql.service"
+  ];
+
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_13;
