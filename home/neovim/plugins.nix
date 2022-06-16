@@ -30,8 +30,8 @@ with vimPlugins; [
   plenary-nvim
   popup-nvim
 
-  # vim-polyglot
   telescope-nvim
+  telescope-fzy-native-nvim
 
   # lsp
   nvim-lspconfig

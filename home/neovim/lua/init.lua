@@ -7,6 +7,7 @@ require('lsp')
 
 -- Plugin configs
 require('plugin-config/cmp')
+require('plugin-config/telescope')
 
 -- My preferred options
 
