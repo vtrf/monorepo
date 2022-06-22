@@ -11,6 +11,7 @@
     hardware.url = "github:NixOS/nixos-hardware";
     homeManager.inputs.nixpkgs.follows = "unstable";
     homeManager.url = "github:nix-community/home-manager";
+    nixDoomEmacs.url = "github:nix-community/nix-doom-emacs";
     nixColors.url = "github:misterio77/nix-colors";
     nur.url = "github:nix-community/nur";
   };
@@ -59,6 +60,7 @@
             ./home/chromium.nix
             ./home/cli.nix
             ./home/dconf.nix
+            ./home/doom
             ./home/email.nix
             ./home/firefox.nix
             ./home/git.nix
@@ -75,6 +77,7 @@
             ./modules/meta.nix
 
             inputs.nixColors.homeManagerModule
+            inputs.nixDoomEmacs.hmModule
           ];
         };
 
