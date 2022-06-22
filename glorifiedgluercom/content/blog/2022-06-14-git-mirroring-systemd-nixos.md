@@ -49,14 +49,16 @@ systemd *timer* hourly.
 
 ### The script
 
-There's nothing novel here. It's just a script that will fetch the latest
-references and then push them to our mirror.
+There's nothing novel here. This script will iterate over the directories inside
+the `WorkingDirectory`, fetch updates and then push it to our mirror.
 
 ```nix
 let
   gitmirrorScript = pkgs.writeShellScriptBin "gitmirror" ''
-    git fetch -p origin
-    git push --mirror
+    for d in */ ; do
+      git -C "$d" fetch -p origin
+      git -C "$d" push --mirror
+    done
   '';
 in
 ```
@@ -65,7 +67,9 @@ in
 
 The service is rather simple too, we pass our repository's directory through the
 `WorkingDirectory` value and set the `gitmirror` service as the unit to be
-invoked by our timer.
+invoked by our timer. Note, however, that we added `git` _and_ `openssh` to the
+path. Your root user should be able to authenticate on boths repos with its ssh
+key.
 
 ```nix
 {
@@ -73,7 +77,7 @@ invoked by our timer.
     enable = true;
     description = "Git mirror service";
     after = [ "network.target" ];
-    path = [ pkgs.git ];
+    path = with pkgs; [ git openssh ];
     serviceConfig = {
       Type="oneshot";
       WorkingDirectory = "/home/glorifiedgluer/repo";
@@ -84,7 +88,7 @@ invoked by our timer.
 
   systemd.timers.gitmirror = {
     description = "Git mirror timer";
-    timeConfig = {
+    timerConfig = {
       OnCalendar = "hourly";
       Unit = "gitmirror.service";
     };
