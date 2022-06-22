@@ -115,6 +115,7 @@
             ./home/chromium.nix
             ./home/cli.nix
             ./home/dconf.nix
+            ./home/doom
             ./home/firefox.nix
             ./home/git.nix
             ./home/home.nix
@@ -127,6 +128,7 @@
             ./modules/meta.nix
 
             inputs.nixColors.homeManagerModule
+            inputs.nixDoomEmacs.hmModule
 
             ({ pkgs, ... }: {
               home.packages = with pkgs; [
