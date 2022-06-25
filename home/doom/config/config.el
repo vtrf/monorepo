@@ -6,13 +6,18 @@
 (setq user-full-name "Victor Freire"
       user-mail-address "victor@freire.dev.br")
 
-;; ui
-(setq doom-theme 'doom-tomorrow-night
-      display-line-numbers-type t)
+;; kubernetes
+(use-package kubernetes
+  :defer
+  :commands (kubernetes-overview))
 
-;; treemacs
-(after! treemacs
-  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+(use-package kubernetes-evil
+  :defer
+  :after kubernetes)
+
+(map! :leader
+      (:prefix "o"
+        :desc "Kubernetes" "K" 'kubernetes-overview))
 
 ;; nix
 (setq nix-nixfmt-bin "nixpkgs-fmt")
@@ -23,3 +28,11 @@
 
 ;; org
 (setq org-directory "~/org/")
+
+;; treemacs
+(after! treemacs
+  (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
+
+;; ui
+(setq doom-theme 'doom-tomorrow-night
+      display-line-numbers-type t)
