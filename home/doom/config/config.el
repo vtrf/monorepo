@@ -1,10 +1,16 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;;; Code:
+
 (persp-mode)
 
 (setq user-full-name "Victor Freire"
       user-mail-address "victor@freire.dev.br")
+
+;; deft
+(after! deft
+  (setq deft-directory "~/monorepo/notes")
+  (setq deft-extensions '("md" "org")))
 
 ;; kubernetes
 (use-package kubernetes
@@ -17,7 +23,7 @@
 
 (map! :leader
       (:prefix "o"
-        :desc "Kubernetes" "K" 'kubernetes-overview))
+       :desc "Kubernetes" "K" 'kubernetes-overview))
 
 ;; nix
 (setq nix-nixfmt-bin "nixpkgs-fmt")
