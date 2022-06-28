@@ -13,7 +13,6 @@ rec {
       config.allowUnfree = true;
       overlays = [
         inputs.nur.overlay
-        inputs.emacsOverlay.overlay
         (import ../overlay { inherit inputs system; })
       ];
     };
