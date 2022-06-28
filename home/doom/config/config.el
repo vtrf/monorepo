@@ -40,5 +40,22 @@
   (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action))
 
 ;; ui
-(setq doom-theme 'doom-tomorrow-night
-      display-line-numbers-type t)
+(setq doom-theme 'modus-vivendi
+      display-line-numbers-type t
+
+      ;; modus
+      modus-themes-region '(accented)
+      modus-themes-org-blocks 'gray-background
+      modus-themes-fringes 'subtle
+      modus-themes-italic-constructs t
+      modus-themes-bold-constructs t
+      modus-themes-syntax '(green-strings)
+      modus-themes-hl-line '(intense)
+      modus-themes-paren-match '(intense)
+      modus-themes-mode-line '(moody borderless)
+      modus-themes-headings (quote ((1 . (overline variable-pitch 1.4))
+                                    (2 . (overline variable-pitch 1.25))
+                                    (3 . (overline 1.1))
+                                    (t . (monochrome)))))
+
+;;; config.el ends here
