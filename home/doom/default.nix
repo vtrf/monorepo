@@ -4,6 +4,7 @@
   programs.doom-emacs = {
     enable = true;
     doomPrivateDir = ./config;
+    emacsPackage = pkgs.emacsPgtkNativeComp;
   };
 
   # LSPs

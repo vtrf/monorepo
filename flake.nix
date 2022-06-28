@@ -8,11 +8,12 @@
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "unstable";
 
+    emacsOverlay.url = "github:nix-community/emacs-overlay";
     hardware.url = "github:NixOS/nixos-hardware";
     homeManager.inputs.nixpkgs.follows = "unstable";
     homeManager.url = "github:nix-community/home-manager";
-    nixDoomEmacs.url = "github:nix-community/nix-doom-emacs";
     nixColors.url = "github:misterio77/nix-colors";
+    nixDoomEmacs.url = "github:nix-community/nix-doom-emacs";
     nur.url = "github:nix-community/nur";
   };
 
