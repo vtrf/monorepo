@@ -1,10 +1,13 @@
 { pkgs, ... }:
 
+let
+  inherit (pkgs) emacs;
+in
 {
   programs.doom-emacs = {
     enable = true;
     doomPrivateDir = ./config;
-    emacsPackage = pkgs.emacsPgtkNativeComp;
+    emacsPackage = emacs;
   };
 
   # LSPs
