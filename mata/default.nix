@@ -1,81 +1,86 @@
-{ pkgs, utils, ... }:
+{ inputs, ... }:
 
 let
-  inherit (pkgs)
-    buildGoModule
-    lib
-    mkShell
-
-    delve
-    gnumake
-    go
-    go-outline
-    golangci-lint
-    gomodifytags
-    gopkgs
-    gopls
-    gotests
-    impl
-    scdoc
-    ;
-
-  name = "mata";
+  inherit (inputs) nixpkgs utils;
 in
-rec {
-  apps.mata = utils.lib.mkApp { drv = packages.mata; };
-  packages.mata = buildGoModule {
-    inherit name;
-    src = lib.cleanSource ./.;
+utils.lib.eachDefaultSystem (system:
+  let
+    pkgs = import nixpkgs { inherit system; };
+    inherit (pkgs)
+      buildGoModule
+      lib
+      mkShell
 
-    nativeBuildInputs = [ scdoc ];
+      delve
+      gnumake
+      go
+      go-outline
+      golangci-lint
+      gomodifytags
+      gopkgs
+      gopls
+      gotests
+      impl
+      scdoc
+      ;
 
-    vendorSha256 = "sha256-4gbUCQXdqBt1m5mvSeG7UjL5IZyYjoNtDmHHJX6mboQ=";
+    name = "mata";
+  in
+  rec {
+    apps.mata = utils.lib.mkApp { drv = packages.mata; };
+    packages.mata = buildGoModule {
+      inherit name;
+      src = lib.cleanSource ./.;
 
-    subPackages = [ "cmd/mata" ];
+      nativeBuildInputs = [ scdoc ];
 
-    makeFlags = [
-      "PREFIX=$(out)"
-    ];
+      vendorSha256 = "sha256-4gbUCQXdqBt1m5mvSeG7UjL5IZyYjoNtDmHHJX6mboQ=";
 
-    postBuild = ''
-      make $makeFlags
-    '';
+      subPackages = [ "cmd/mata" ];
 
-    preInstall = ''
-      make $makeFlags install
-    '';
-
-    meta = with lib; {
-      homepage = "https://git.sr.ht/~glorifiedgluer/monorepo/mata";
-      description = "A CLI tool for mataroa / mataroa.blog";
-      license = licenses.mit;
-      maintainers = with maintainers; [ ratsclub ];
-    };
-  };
-
-  devShells = {
-    mata = mkShell {
-      buildInputs = [
-        delve
-        gnumake
-        go
-        go-outline
-        golangci-lint
-        gomodifytags
-        gopkgs
-        gopls
-        gotests
-        impl
-        scdoc
+      makeFlags = [
+        "PREFIX=$(out)"
       ];
+
+      postBuild = ''
+        make $makeFlags
+      '';
+
+      preInstall = ''
+        make $makeFlags install
+      '';
+
+      meta = with lib; {
+        homepage = "https://git.sr.ht/~glorifiedgluer/monorepo/mata";
+        description = "A CLI tool for mataroa / mataroa.blog";
+        license = licenses.mit;
+        maintainers = with maintainers; [ ratsclub ];
+      };
     };
 
-    mata-ci = mkShell {
-      buildInputs = [
-        gnumake
-        go
-        golangci-lint
-      ];
+    devShells = {
+      mata = mkShell {
+        buildInputs = [
+          delve
+          gnumake
+          go
+          go-outline
+          golangci-lint
+          gomodifytags
+          gopkgs
+          gopls
+          gotests
+          impl
+          scdoc
+        ];
+      };
+
+      mata-ci = mkShell {
+        buildInputs = [
+          gnumake
+          go
+          golangci-lint
+        ];
+      };
     };
-  };
-}
+  })

@@ -4,20 +4,28 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     utils.url = "github:numtide/flake-utils";
+
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    hardware.url = "github:NixOS/nixos-hardware";
+    homeManager.inputs.nixpkgs.follows = "nixpkgs";
+    homeManager.url = "github:nix-community/home-manager";
+    nixColors.url = "github:misterio77/nix-colors";
+    nixDoomEmacs.url = "github:nix-community/nix-doom-emacs";
+    nixDoomEmacs.inputs.nixpkgs.follows = "nixpkgs";
+    nur.url = "github:nix-community/nur";
   };
 
-  outputs = { self, nixpkgs, utils, ... }:
-    utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        inherit (pkgs) callPackage lib;
-
-        projects = builtins.map (value: callPackage value { inherit pkgs utils; }) [
-          ./glorifiedgluercom
-          ./mata
-        ];
-      in
-      lib.foldr (atrrset: acc: lib.recursiveUpdate atrrset acc)
-        { }
-        projects);
+  outputs = { self, ... }@inputs:
+    let
+      inherit (inputs) nixpkgs;
+      inherit (nixpkgs) lib;
+      projects = builtins.map (project: import project { inherit inputs; }) [
+        ./dotfiles
+        ./glorifiedgluercom
+        ./mata
+      ];
+    in
+    lib.foldr (attrset: acc: lib.recursiveUpdate attrset acc) { } projects;
 }
