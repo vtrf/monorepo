@@ -7,6 +7,7 @@ in
   programs.firefox = {
     enable = true;
     profiles."${config.meta.username}" = {
+      isDefault = true;
       settings = {
         # https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
         "gfx.webrender.all" = true;

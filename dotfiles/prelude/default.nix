@@ -62,16 +62,12 @@ rec {
     }:
     let
       pkgs = mkNixpkgs { inherit system; };
-      homeDirectory = "/home/${username}";
     in
     inputs.homeManager.lib.homeManagerConfiguration {
-      inherit system username homeDirectory pkgs;
-      configuration = {
-        imports = homeModules;
-      };
-
+      inherit pkgs;
+      modules = homeModules;
       extraSpecialArgs = {
-        inherit inputs nixpkgs system username;
+        inherit pkgs inputs nixpkgs system username;
       };
     };
 }

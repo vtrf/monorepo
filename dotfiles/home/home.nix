@@ -10,14 +10,9 @@ in
 
   nix.registry.nixpkgs.flake = nixpkgs;
 
-  meta = {
-    username = "victor";
-    email = "victor@freire.dev.br";
-  };
-
   home = {
     inherit username;
     homeDirectory = "/home/${username}";
-    stateVersion = "20.09";
+    stateVersion = "22.05";
   };
 }
