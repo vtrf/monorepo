@@ -1,10 +1,12 @@
 { inputs, ... }:
 
 let
+  name = "capivarasdev";
   inherit (inputs) nixpkgs utils;
 in
 utils.lib.eachDefaultSystem (system:
 let
+
   pkgs = import nixpkgs { inherit system; };
   inherit (pkgs)
     hut
@@ -14,7 +16,7 @@ let
     ;
 in
 {
-  packages.capivarasdev = stdenv.mkDerivation {
+  packages."${name}" = stdenv.mkDerivation {
     name = "capivarasdev";
     src = lib.cleanSource ./.;
 
@@ -28,7 +30,7 @@ in
     '';
   };
 
-  devShells.capivaras-ci = mkShell {
+  devShells."${name}-ci" = mkShell {
     buildInputs = [ hut ];
   };
 })
