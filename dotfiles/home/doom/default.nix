@@ -7,7 +7,7 @@ in
   programs.doom-emacs = {
     enable = true;
     doomPrivateDir = ./config;
-    emacsPackage = emacs;
+    emacsPackage = emacs.override { withPgtk = true; };
   };
 
   # LSPs
