@@ -22,6 +22,7 @@
       inherit (inputs) nixpkgs;
       inherit (nixpkgs) lib;
       projects = builtins.map (project: import project { inherit inputs; }) [
+        ./capivarasdev
         ./dotfiles
         ./glorifiedgluercom
         ./mata

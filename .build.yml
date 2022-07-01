@@ -12,6 +12,15 @@ tasks:
       if [ "$(git rev-parse main)" != "$(git rev-parse HEAD)" ]; then \
         complete-build; \
       fi
+  - capivarasdev: |
+      cd monorepo
+      if ! $(git diff --quiet HEAD HEAD^ -- "capivarasdev")
+      then
+        nix build .#capivarasdev
+        nix develop .#capivarasdev-ci -c hut pages publish ./result/site.tar.gz \
+          --domain capivaras.dev \
+          --not-found 404.html
+      fi
   - glorifiedgluercom: |
       cd monorepo
       if ! $(git diff --quiet HEAD HEAD^ -- "glorifiedgluercom")

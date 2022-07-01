@@ -1,0 +1,39 @@
+:root {
+    --primary: #007bff;
+}
+body {
+    font-family: "monospace";
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+main > header {
+  text-align: center;
+}
+
+main > header img {
+    width: 80px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+main > header img:hover {
+    filter: invert(.92)
+}
+
+@media(prefers-color-scheme: dark) {
+    body {
+        background-color: #121415;
+        color: #e1dfdc;
+    }
+    main > header img {
+        filter: invert(.92);
+    }
+    main > header img:hover {
+        filter: invert(.0)
+    }
+    a {
+        color: var(--primary);
+    }
+}
