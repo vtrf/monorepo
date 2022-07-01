@@ -67,7 +67,7 @@ rec {
       inherit pkgs;
       modules = homeModules;
       extraSpecialArgs = {
-        inherit pkgs inputs nixpkgs system username;
+        inherit inputs nixpkgs system username;
       };
     };
 }
