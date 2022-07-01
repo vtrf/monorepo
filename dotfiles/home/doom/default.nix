@@ -9,11 +9,4 @@ in
     doomPrivateDir = ./config;
     emacsPackage = emacs.override { withPgtk = true; };
   };
-
-  # LSPs
-  home.packages = with pkgs; [
-    gopls
-    nodePackages.pyright
-    rust-analyzer
-  ];
 }
