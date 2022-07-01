@@ -12,6 +12,9 @@
   (setq deft-directory "~/monorepo/notes")
   (setq deft-extensions '("md" "org")))
 
+;; go
+(setq lsp-go-use-gofumpt t)
+
 ;; kubernetes
 (use-package kubernetes
   :defer
