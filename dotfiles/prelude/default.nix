@@ -38,9 +38,6 @@ rec {
       modules =
         nixosModules
         ++ [
-          # host configuration
-          (../hosts + "/${host}")
-
           # home manager
           inputs.homeManager.nixosModules.home-manager
           {
