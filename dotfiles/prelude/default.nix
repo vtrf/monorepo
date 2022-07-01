@@ -5,7 +5,7 @@ let
 in
 rec {
   mkNixpkgs =
-    { nixpkgs
+    { nixpkgs ? inputs.nixpkgs
     , system
     }:
     import nixpkgs {
@@ -23,7 +23,7 @@ rec {
     , system ? "x86_64-linux"
     , nixosModules ? [ ]
     , homeModules ? [ ]
-    , nixpkgs
+    , nixpkgs ? inputs.nixpkgs
     }:
     let pkgs = mkNixpkgs { inherit nixpkgs system; };
     in
@@ -58,7 +58,7 @@ rec {
     { username
     , system
     , homeModules ? [ ]
-    , nixpkgs
+    , nixpkgs ? inputs.nixpkgs
     }:
     let
       pkgs = mkNixpkgs { inherit system; };
