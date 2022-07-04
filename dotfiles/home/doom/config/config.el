@@ -31,7 +31,16 @@
       +notmuch-sync-backend 'mbsync)
 
 ;; org
-(setq org-directory "~/org/")
+(setq org-directory "~/monorepo/notes/"
+      org-id-link-to-org-use-id t
+      org-roam-directory org-directory)
+
+(map! :leader
+      (:prefix "n"
+       (:prefix "r"
+        :desc "Search Roam" "S" (lambda ()
+                                  (interactive)
+                                  (consult-ripgrep org-roam-directory)))))
 
 ;; treemacs
 (after! treemacs
