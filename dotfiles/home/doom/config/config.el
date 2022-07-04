@@ -7,11 +7,6 @@
 (setq user-full-name "Victor Freire"
       user-mail-address "victor@freire.dev.br")
 
-;; deft
-(after! deft
-  (setq deft-directory "~/monorepo/notes")
-  (setq deft-extensions '("md" "org")))
-
 ;; go
 (setq lsp-go-use-gofumpt t)
 
