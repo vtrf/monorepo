@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       050485c8-cd04-4e3e-800f-1b8930836372
+:END:
+#+title: Go

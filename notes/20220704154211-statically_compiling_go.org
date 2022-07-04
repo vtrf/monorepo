@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       ad38bd05-1eeb-414a-8aba-8b7860df0851
+:END:
+#+title: Statically Compiling Go
+
+Notes on how to statically compile a [[id:050485c8-cd04-4e3e-800f-1b8930836372][Go]] program.
+
+** Statically Compiling
+- Some packages use [[id:08da36ac-71d0-4588-844e-d49275afeb82][cgo in Go Standard Library]]. To skip cgo parts, do the following:
+
+#+begin_src shell
+go build -tags osusergo
+go build -tags netgo
+go build -tags osusergo,netgo
+#+end_src
+
+- To skip all cgo whatsoever: ~CGO_ENABLED=0 go build~
+- We can statically compile the cgo part too: ~go build -ldflags="-extldflags=-static"~
+
+** Statically Cross Compiling
+
+*** =aarch64= with =musl=
+
+#+begin_src shell
+GOOS=linux GOARCH=arm64 CGO_ENABLED=1 CC=aarch64-linux-musl-gcc \
+    go build -ldflags='-extldflags=-static'
+#+end_src

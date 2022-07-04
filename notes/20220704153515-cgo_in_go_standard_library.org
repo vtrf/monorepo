@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       08da36ac-71d0-4588-844e-d49275afeb82
+:END:
+#+title: cgo in Go Standard Library
+
+- =os/user=: There's a C library used to transform user and group ids to user
+  and group names. It can also get names from LDAP.
+
+- =net=: Uses a C library to resolve DNS and help on platforms that don't have a
+  resolv.conf.
+
+Both have a pure [[id:050485c8-cd04-4e3e-800f-1b8930836372][Go]] implementation to some degree.
