@@ -8,7 +8,7 @@ utils.lib.eachDefaultSystem
   let
     pkgs = import nixpkgs { inherit system; };
     inherit (pkgs)
-      emacs
+      emacs-nox
       emacsPackagesFor
       hugo
       hut
@@ -34,7 +34,7 @@ utils.lib.eachDefaultSystem
 
     packages.glorifiedgluercom =
       let
-        customEmacs = (emacsPackagesFor emacs).emacsWithPackages
+        customEmacs = (emacsPackagesFor emacs-nox).emacsWithPackages
           (epkgs: with epkgs.melpaPackages; [
             ox-hugo
           ]
@@ -70,13 +70,12 @@ utils.lib.eachDefaultSystem
 
         buildPhase = ''
           hugo
-          # tar -cvzf site.tar.gz -C public .
+          tar -cvzf site.tar.gz -C public .
         '';
 
         installPhase = ''
           mkdir -p $out
-          # cp -r site.tar.gz $out
-          cp -r public/* $out
+          cp -r site.tar.gz $out
         '';
       };
 
