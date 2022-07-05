@@ -41,31 +41,20 @@ utils.lib.eachDefaultSystem
           ++ (with epkgs.elpaPackages; [
             org
           ]));
-        notes = stdenv.mkDerivation {
-          name = "notes";
-          src = ../notes;
-
-          buildInputs = [ customEmacs ];
-
-          buildPhase = ''
-            emacs $(pwd) --batch -load export.el
-          '';
-
-          installPhase = ''
-            mkdir -p $out
-            cp -r notes/content/notes/* $out
-          '';
-        };
       in
       stdenv.mkDerivation {
         name = "glorifiedgluercom";
         src = lib.cleanSource ./.;
 
-        buildInputs = [ hugo ];
+        buildInputs = [
+          customEmacs
+          hugo
+        ];
 
         configurePhase = ''
-          mkdir -p content/notes
-          cp -r ${notes}/* content/notes
+          cd content/notes
+          emacs $(pwd) --batch -load export.el
+          cd ../..
         '';
 
         buildPhase = ''
