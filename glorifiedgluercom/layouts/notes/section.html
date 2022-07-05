@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ .Site.Title }}</title>
+    {{ $style := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify
+    | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+    {{ template "_internal/opengraph.html" . }}
+  </head>
+  {{ partial "nav.html" }}
+  <main>
+    <h2>Notes</h2>
+    <p><a href="{{.Site.BaseURL}}/notes/atom.xml">RSS feed</a></p>
+
+    {{ range .Data.Pages }}
+      <div class="stub">
+        <h3>
+          <a href="{{ .Permalink }}"> {{ .Title }} </a>
+        </h3>
+      </div>
+    {{ end }}
+    <ul>
+  </main>
+</html>

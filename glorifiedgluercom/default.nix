@@ -3,17 +3,20 @@
 let
   inherit (inputs) nixpkgs utils;
 in
-utils.lib.eachDefaultSystem (system:
+utils.lib.eachDefaultSystem
+  (system:
   let
     pkgs = import nixpkgs { inherit system; };
-      inherit (pkgs)
+    inherit (pkgs)
+      emacs
+      emacsPackagesFor
       hugo
       hut
       lib
       mkShell
       stdenv
       writeShellApplication
-    ;
+      ;
   in
   {
     apps.glorifiedgluercom = rec {
@@ -29,22 +32,53 @@ utils.lib.eachDefaultSystem (system:
       program = "${script}/bin/hugorun.sh";
     };
 
-    packages.glorifiedgluercom = stdenv.mkDerivation {
-      name = "glorifiedgluercom";
-      src = lib.cleanSource ./.;
+    packages.glorifiedgluercom =
+      let
+        customEmacs = (emacsPackagesFor emacs).emacsWithPackages
+          (epkgs: with epkgs.melpaPackages; [
+            ox-hugo
+          ]
+          ++ (with epkgs.elpaPackages; [
+            org
+          ]));
+        notes = stdenv.mkDerivation {
+          name = "notes";
+          src = ../notes;
 
-      buildInputs = [ hugo ];
+          buildInputs = [ customEmacs ];
 
-      buildPhase = ''
-        hugo
-        tar -cvzf site.tar.gz -C public .
-      '';
+          buildPhase = ''
+            emacs $(pwd) --batch -load export.el
+          '';
 
-      installPhase = ''
-        mkdir -p $out
-        cp -r site.tar.gz $out
-      '';
-    };
+          installPhase = ''
+            mkdir -p $out
+            cp -r notes/content/notes/* $out
+          '';
+        };
+      in
+      stdenv.mkDerivation {
+        name = "glorifiedgluercom";
+        src = lib.cleanSource ./.;
+
+        buildInputs = [ hugo ];
+
+        configurePhase = ''
+          mkdir -p content/notes
+          cp -r ${notes}/* content/notes
+        '';
+
+        buildPhase = ''
+          hugo
+          # tar -cvzf site.tar.gz -C public .
+        '';
+
+        installPhase = ''
+          mkdir -p $out
+          # cp -r site.tar.gz $out
+          cp -r public/* $out
+        '';
+      };
 
     devShells.glorifiedgluercom-ci = mkShell {
       buildInputs = [ hut ];

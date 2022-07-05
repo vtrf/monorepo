@@ -23,7 +23,7 @@ tasks:
       fi
   - glorifiedgluercom: |
       cd monorepo
-      if ! $(git diff --quiet HEAD HEAD^ -- "glorifiedgluercom")
+      if ! $(git diff --quiet HEAD HEAD^ -- "glorifiedgluercom" "notes")
       then
         nix build .#glorifiedgluercom
         nix develop .#glorifiedgluercom-ci -c hut pages publish ./result/site.tar.gz \
