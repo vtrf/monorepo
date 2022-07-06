@@ -1,0 +1,367 @@
+#+TITLE: ~glorifiedgluer
+#+AUTHOR: ~glorifiedgluer
+
+#+HUGO_BASE_DIR: ../
+
+* Pages
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: /
+:END:
+** About
+:PROPERTIES:
+:EXPORT_TITLE: About
+:EXPORT_FILE_NAME: about
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :description About this site and me.
+:END:
+*** About me
+I'm *Victor Freire*, a student and software developer based in *Guarulhos,
+Brazil*, currently working at [[https://divionsmg.com][Divisions Maintenance Group]] as a
+software engineer writing [[https://fsharp.org/][F#]] and [[https://nixos.org][Nix]].
+
+I've taught myself coding, cloud computing and linux for years, out of passion.
+At the moment I'm mostly interested in learning about highly scalable systems.
+
+My projects live at [[https://git.sr.ht/~glorifiedgluer][sourcehut]] and [[https://github.com/ratsclub][GitHub]], you can also contact me via [[mailto:victor@freire.dev.br][email]] or
+[[https://matrix.to/#/@stoicallyincorrect:mdzk.app][matrix]].
+
+*** About this site
+
+**** Why?
+This site was built for the only reason of sharing and documenting most of my
+interests.
+
+**** How?
+I intend to only use [[https://www.gnu.org/philosophy/floss-and-foss.html][FOSS]] while producing its content.
+
+- Icon made by my beloved nana
+- Generated using [[https://hugo.io][Hugo]], theme inspired by [[https://harelang.org][The Hare programming language website]]
+- Source code at [[https://git.sr.ht/~glorifiedgluer/monorepo/tree/main/item/glorifiedgluercom][sourcehut]]
+- Built with [[https://nixos.org][Nix]] and [[https://builds.sr.ht/~glorifiedgluer/monorepo][builds.sr.ht]]
+- Hosted at [[https://srht.site/][pages.sr.ht]]
+
+** Blogroll
+:PROPERTIES:
+:EXPORT_TITLE: Blogroll
+:EXPORT_FILE_NAME: blogroll
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :description A rendered version of my OPML file. :layout blogroll
+:END:
+This page is a rendered version of my [[https://en.wikipedia.org/wiki/OPML][OPML]] file.
+
+** Home
+:PROPERTIES:
+:EXPORT_TITLE: ~glorifiedgluer
+:EXPORT_FILE_NAME: _index
+:EXPORT_HUGO_TYPE: homepage
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :description ~glorifiedgluer's personal website.
+:END:
+This page is empty because I didn't find anything interesting to put here yet.
+
+Feel free to check out the navigation links above.
+
+* Blog :@blog:
+:PROPERTIES:
+:EXPORT_HUGO_SECTION: blog
+:END:
+** This will deteriorate quickly
+:PROPERTIES:
+:EXPORT_FILE_NAME: this-will-deteriorate-quickly
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug this-will-deteriorate-quickly
+:EXPORT_DATE: 2020-03-01
+:END:
+#+begin_description
+Thoughts about the current state of the web, content consuming and its longevity.
+#+end_description
+
+In my teenager years I was a member of my school's student council. Part of our
+job was to propose changes to our current infrastructure, organize study groups
+and plan social projects. We were a bunch of youngsters without much experience
+-- or no experience at all -- in the education field, therefore we resorted to
+know from those who had it over the Internet. At the time there wasn't a lot of
+content about it on social media, the majority was writing at Blogspot (now
+[[https://blogger.com][Blogger]]) or forums.
+
+Here comes [[https://pt.wikipedia.org/wiki/RSS][RSS]]. Blogspot offered a *RSS Feed* by default so it was rather simple
+to follow dozens of blogs. Every member of the council used a RSS reader they
+liked the most and it worked great.
+
+Years passed and I found the list of blogs I used to read at that time. While
+diving through the links I found out most of them didn't receive an update since
+my highschool (or have just disappeared). However, they always had a link to the
+author's social media (Twitter, Facebook or LinkedIn) and you could see those
+profiles were being updated regularly. A lot of the educators continued to write
+posts about their field of interest, but now on social media.
+
+In the meantime, I observed a pattern between profiles. They tended to reference
+their old posts from the Blogger platform instead of publishing them again on
+the new platform. Why so? You could see some of them tried to do that but
+formatting was awkward as Facebook doesn't provide the same tools Blogger
+offered and Twitter's posts are too short. So I feel they just couldn't retrieve
+their posts and they were long gone from their hands.
+
+So how would an individual escape this madness? It's quite simple, a blog post
+is nothing but static content. Text, images videos and audios. Use this in your
+favor. Write text on known formats such as Markdown[fn:1], [[https://pt.wikipedia.org/wiki/ReStructuredText][ReStructuredText]] or
+even plain-text. Store all files in a [[https://git-scm.com][Git]] repository, external hard drive,
+Dropbox... whatever. Just stick to the simplest file formats and reliable
+storage. Services like [[https://medium.com][Medium]], [[https://substack.com][Substack]] and [[https://tumblr.com][Tumblr]] can die and take all your
+posts with them at any time.
+
+At the moment I'm using [[https://neovim.io][Neovim]] to edit my blog posts in Markdown and hosting
+them in [[https://mataroa.blog][mataroa]]. Alternatives are: [[https://gohugo.io][Hugo]], [[https://getzola.org][Zola]] and more. All you need to setup a
+web site is one of these programs, a bunch of Markdown files and a web server.
+You'll also find a lot of places to host your content for free such as [[https://gitlab.com][GitLab]],
+[[https://github.com][GitHub]] or [[https://netlify.com][Netlify]].
+
+Although this approach brings some advantages, it has some shortcomings too. In
+a static website you won't have a comments section without a third-party
+service; basic tech knowledge is needed to know where to put files in your web
+server provider of choice and if you want a custom domain such as this one
+you'll have to do some configuration. A quick YouTube tutorial might be
+sufficient to teach you how to do all of the above in minutes.
+
+[fn:1] Even better if following a specification such as [[https://commonmark.org/]]
+
+** Burning out and finding out
+:PROPERTIES:
+:EXPORT_FILE_NAME: burning-out-and-finding-out
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug burning-out-and-finding-out
+:EXPORT_DATE: 2021-08-31
+:END:
+#+begin_description
+On being burnout for the first time.
+#+end_description
+At the time of this writing I'm burned out. I had no doubt it was a thing and
+that it could happen to anyone. However, I couldn't see myself suffering from
+this. At least not so soon.
+
+#+begin_quote
+  Burnout is caused when you repeatedly make large amounts of sacrifice and or
+  effort into high-risk problems that fail. It's the result of a negative
+  prediction error in the nucleus accumbens. You effectively condition your
+  brain to associate work with failure.
+  [[https://news.ycombinator.com/item?id=5630618][Source]]
+#+end_quote
+
+I've been pretty active for the past 4 to 5 years due to college, courses, work
+and other activities. Yet all of this haven't bothered me in the slightest,
+until now. I couldn't take control of basic chores, missed the point of meetings
+after a few moments, had no will to leave the bed and many other things.
+Moreover, It's a strange feeling with predefined steps:
+
+1. You know what you have to do;
+2. You know it's within your capabilities;
+3. You get excited to do the task;
+4. Your body just /will not do it/.
+
+There you go, you now have the recipe to fight against yourself for a whole day.
+This will be a excruciating battle until you hit the bed and repeat it the next
+morning. That is, if you aren't already going to sleep late due to forcing
+yourself to be productive throughout the day. Realizing I was battling my own
+was really important to improve my situation. I started by cleaning my room,
+then exercising, putting a alarm to tell me when to eat and so on. My next step
+was to change my whole environment by looking after a new job.
+
+Currently I'm not in position to take a sabbatical period of time to discover
+new hobbies or a new career - and I don't want to, as I love my current
+profession. So, what's left to ponder to change this situation, I may ask
+myself? To be honest, I have no clue. While I'm in the process to land a new job
+I feel that this might be the response I needed to this feeling. New challenges,
+new people, new technologies and new everything.
+
+** Notes on builds.sr.ht
+:PROPERTIES:
+:EXPORT_DATE: 2022-04-29
+:EXPORT_FILE_NAME: notes-on-buildssrht
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug notes-on-buildssrht
+:END:
+#+begin_description
+I quite like builds.sr.ht and want to share some of the reasons.
+#+end_description
+
+For the past few months I've been using [[https://sr.ht][sourcehut]]'s platform to work on software
+an it has been quite an interesting experience. Nonetheless, one of the services
+I really enjoy using is the their build service called [[https://builds.sr.ht][builds.sr.ht]].
+
+#+begin_quote
+  builds.sr.ht is a service on sr.ht that allows you to submit "build manifests"
+  for us to work on.
+  [[https://man.sr.ht/builds.sr.ht/][man.sr.ht]]
+#+end_quote
+
+The thing I don't like on [[https://github.com/features/actions][GitHub Actions]] is that it is kind of /magical/. For
+example, you don't actually know what it is doing when you define that an
+=action= should only run when a specific path is modified. Not to even mention
+their [[https://docs.github.com/pt/actions/creating-actions][custom actions]] which usually takes a non-trivial amount of
+TypeScript/JavaScript.
+
+Contrary to this, [[https://builds.sr.ht][builds.sr.ht]] is /really/ explicit on its [[https://man.sr.ht/builds.sr.ht/manifest.md][build manifest]].
+You're basically expected to write plain shell scripts for your builds.
+
+*** Reducing resource usage
+   :PROPERTIES:
+   :CUSTOM_ID: reducing-resource-usage
+   :END:
+As I said previously, there's no special syntax to work on specific paths,
+branches, pull requests and such. By default your task will run on every commit
+you push. In order to reduce our CI usage we can restrain our tasks to run on
+specific scenarios:
+
+**** On path change
+    :PROPERTIES:
+    :CUSTOM_ID: on-path-change
+    :END:
+#+begin_src sh
+if ! $(git diff --quiet HEAD HEAD^ -- "<your-path>")
+then
+  # do something
+fi
+#+end_src
+
+**** On branch change
+    :PROPERTIES:
+    :CUSTOM_ID: on-branch-change
+    :END:
+This tip was taken from [[https://todo.sr.ht/~sircmpwn/builds.sr.ht/170][issue #170]].
+
+#+begin_example
+tasks:
+- check-branch: |
+   cd repo_name
+   if [ "$(git rev-parse your-branch)" != "$(git rev-parse HEAD)" ]; then \
+      complete-build; \
+   fi
+#+end_example
+
+*** NixOS on builds.sr.ht
+   :PROPERTIES:
+   :CUSTOM_ID: nixos-on-builds.sr.ht
+   :END:
+As I don't like to write shell scripts I use Nix and this is my favorite feature
+of this service. builds.sr.ht supports [[https://nixos.org][NixOS]] by default[fn:1]. This means that
+we can leverage Nix Flakes for truly declarative and reproducible builds there!
+Let's consider a small example using [[https://go.dev][Go]] to show you how easy it really is. A
+small =flake.nix= containing the following content should suffice our needs:
+
+#+begin_example
+{
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+  outputs = { self, nixpkgs, ... }:
+    let pkgs = import nixpkgs { system = "x86_64-linux"; };
+    in
+    {
+      devShells."x86_64-linux".ci = with pkgs; mkShell {
+        buildInputs = [ go golangci-lint ];
+      };
+    };
+}
+#+end_example
+
+This definition is capable of giving us a shell containing Go and [[https://github.com/golangci/golangci-lint][golangci-lint]]
+on =$PATH=.
+
+Now let's write the build manifest for our CI:
+
+#+begin_example
+image: nixos/unstable
+packages:
+- nixos.nixUnstable
+environment:
+  NIX_CONFIG: "experimental-features = nix-command flakes"
+tasks:
+  - lint: |
+      cd source
+      nix develop .#ci -c golangci-lint run
+  - test: |
+      cd source
+      nix develop .#ci -c go test ./...
+  - build: |
+      cd source
+      nix develop .#ci -c go build
+#+end_example
+
+And that's it! We have our CI up and running with the guarantee of having our
+tools being the same on every run. No sudden updates or unexpected behavior.
+
+[fn:1] [[https://man.sr.ht/builds.sr.ht/compatibility.md#nixos]]
+
+** Starting a personal monorepo
+:PROPERTIES:
+:EXPORT_DATE: 2022-05-11
+:END:
+#+begin_description
+Starting my journey with a personal monorepo managed by Nix.
+#+end_description
+
+I've been using [[https://nixos.org][Nix]] as my package manager for 4 years now and it has been the
+best /computer-related/ decision I have ever made and fortunately, for the past
+few years its ecosystem has been growing a lot[fn:1] [fn:2] [fn:3]. Some of this
+movement is due to the advent o [[https://nixos.wiki/wiki/Flakes][Flakes]] that makes it /way/ easier to share
+reproducible outputs than the previous Nix solution of channels.
+
+Considering that I can use Nix:
+
+- to share build artifacts (binaries, Nix modules and such);
+- to manage my dependencies;
+- as a build system.
+
+I thought to myself: "Why not build a personal monorepo"? I mean, this might
+sound like a weird conclusion to take from all of this but I can explain! I
+swear!
+
+*** Rationale
+  :PROPERTIES:
+  :CUSTOM_ID: rationale
+  :END:
+Sometimes I just get bored setting up a new project. Create a new repository,
+setup the dependencies, write a CI manifest... it's too tiresome! I won't even
+mention the pain in the ass that is to write multiple projects on the multiple
+machines. The clone, fetch, pull and push dance is just too much when I could be
+coding already.
+
+Most of my personal projects are written in [[https://go.dev][Go]], a really boring language that
+takes its time to include new features and release new versions. This means that
+an update won't break them and that I can take advantage of a way to share the
+same compiler and tooling version through my projects.
+
+If you're a Nix user, a single command would show you all the outputs available
+for use: =nix flake show sourcehut:~glorifiedgluer/monorepo=. This also means
+that you can import this repo as an input on your =flake.nix= file and use any
+of my projects as you please.
+
+The CI can be simplified to a simple shell conditional:
+
+#+begin_src yaml
+tasks:
+  - someproject: |
+      cd monorepo
+      if ! $(git diff --quiet HEAD HEAD^ -- "someproject")
+      then
+        # do something if the project got an update
+      fi
+#+end_src
+
+Nonetheless, the best reason to try this is out is to have some fun and explore
+new challenges with version control and build systems! ;-)
+
+*** Expectation
+  :PROPERTIES:
+  :CUSTOM_ID: expectation
+  :END:
+I mean... none? lol. Being serious now, I don't expect my projects to become
+something used by hundreds or thousands of users as most of them are done out of
+passion/need. So the rationale above is composed of things that personally took
+out part of the joy of bulding out something and seeing it run.
+
+Is this going to work? I have no idea as I don't have much experience with
+monorepos. I'm not really sure if this is going to scale or bore me in other
+ways. The only certainty I have is that I'm having fun doing it /right now/!
+
+You can see the repository on the links below:
+
+- [[https://github.com/ratsclub/monorepo][GitHub]]
+- [[https://git.sr.ht/~glorifiedgluer/monorepo/][sourcehut]]
+
+[fn:1] https://blog.replit.com/nix
+[fn:2] https://shopify.engineering/what-is-nix
+[fn:3] https://hercules-ci.com/

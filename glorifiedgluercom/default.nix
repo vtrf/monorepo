@@ -52,9 +52,9 @@ utils.lib.eachDefaultSystem
         ];
 
         configurePhase = ''
-          cd content/notes
+          cd content
           emacs $(pwd) --batch -load export.el
-          cd ../..
+          cd ..
         '';
 
         buildPhase = ''
