@@ -62,6 +62,15 @@ Feel free to check out the navigation links above.
 :PROPERTIES:
 :EXPORT_HUGO_SECTION: blog
 :END:
+** Index
+:PROPERTIES:
+:EXPORT_TITLE: ~glorifiedgluer blog
+:EXPORT_FILE_NAME: _index
+:EXPORT_DATE: 1970-01-01
+:END:
+#+begin_description
+Scattered thoughts, ideas and experiences.
+#+end_description
 ** This will deteriorate quickly
 :PROPERTIES:
 :EXPORT_FILE_NAME: this-will-deteriorate-quickly

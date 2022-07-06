@@ -15,23 +15,9 @@ utils.lib.eachDefaultSystem
       lib
       mkShell
       stdenv
-      writeShellApplication
       ;
   in
   {
-    apps.glorifiedgluercom = rec {
-      type = "app";
-      script = writeShellApplication {
-        name = "hugorun.sh";
-        text = ''
-          set -xe
-          export PORT="''${HUGO_PORT:-7072}"
-          cd ./glorifiedgluercom && ${hugo}/bin/hugo serve --port "$PORT"
-        '';
-      };
-      program = "${script}/bin/hugorun.sh";
-    };
-
     packages.glorifiedgluercom =
       let
         customEmacs = (emacsPackagesFor emacs-nox).emacsWithPackages
