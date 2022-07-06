@@ -297,6 +297,8 @@ tools being the same on every run. No sudden updates or unexpected behavior.
 ** Starting a personal monorepo
 :PROPERTIES:
 :EXPORT_DATE: 2022-05-11
+:EXPORT_FILE_NAME: starting-a-personal-monorepo
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug starting-a-personal-monorepo
 :END:
 #+begin_description
 Starting my journey with a personal monorepo managed by Nix.
@@ -374,3 +376,107 @@ You can see the repository on the links below:
 [fn:1] https://blog.replit.com/nix
 [fn:2] https://shopify.engineering/what-is-nix
 [fn:3] https://hercules-ci.com/
+
+** Git mirroring, systemd and NixOS
+:PROPERTIES:
+:EXPORT_DATE: 2022-06-14
+:EXPORT_FILE_NAME: git-mirroring-systemd-nixos
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug git-mirroring-systemd-nixos
+:END:
+
+For the past few years I have been collecting contributions to multiple projects
+on multiple platforms such as GitHub, GitLab, self-hosted Gitea instances and so
+on. It's rather boring to go to a website and see the source code there... Then
+I thought to myself: "Why not write about a made up need I don't have just to
+learn something new?".
+
+So, the idea here was to mirror those repositories into my [[https://sourcehut.org][sourcehut]] account
+(although this should work for any remote repository). For this we will use a
+[[https://nixos.org][NixOS]] system and [[https://www.freedesktop.org/software/systemd/man/systemd.timer.html][systemd timers]]. The idea is dead simple, we clone the
+repositories and push them to our desired remote.
+
+*** Configuring the repository
+   :PROPERTIES:
+   :CUSTOM_ID: configuring-the-repository
+   :END:
+This step is pretty easy and can be done in two steps:
+
+1. Clone the repository
+
+#+begin_src sh
+$ git clone --mirror https://git.com/repo
+#+end_src
+
+2. Configure the remote as to ensure that we will only push to the
+   desired remote.
+
+#+begin_src sh
+$ cd repo
+$ git remote set-url --push origin https://remote.com/repo-mirror
+#+end_src
+
+*** systemd to the rescue
+   :PROPERTIES:
+   :CUSTOM_ID: systemd-to-the-rescue
+   :END:
+We have our repository but we are still missing an important step that is to
+keep pushing new changes to our mirror.
+
+[[https://nixos.org][NixOS]] has a pretty good declarative way of declaring systemd services and timers
+that we can take advantage of here. The idea is to have a script being ran in
+our diretory through a systemd /service/ that will be invoked by a systemd
+/timer/ hourly.
+
+**** The script
+    :PROPERTIES:
+    :CUSTOM_ID: the-script
+    :END:
+There's nothing novel here. This script will iterate over the directories inside
+the =WorkingDirectory=, fetch updates and then push it to our mirror.
+
+#+begin_src nix
+let
+  gitmirrorScript = pkgs.writeShellScriptBin "gitmirror" ''
+    for d in */ ; do
+      git -C "$d" fetch -p origin
+      git -C "$d" push --mirror
+    done
+  '';
+in
+#+end_src
+
+**** The service and timer
+    :PROPERTIES:
+    :CUSTOM_ID: the-service-and-timer
+    :END:
+The service is rather simple too, we pass our repository's directory through the
+=WorkingDirectory= value and set the =gitmirror= service as the unit to be
+invoked by our timer. Note, however, that we added =git= /and/ =openssh= to the
+path. Your root user should be able to authenticate on boths repos with its ssh
+key.
+
+#+begin_src nix
+{
+  systemd.services.gitmirror = {
+    enable = true;
+    description = "Git mirror service";
+    after = [ "network.target" ];
+    path = with pkgs; [ git openssh ];
+    serviceConfig = {
+      Type="oneshot";
+      WorkingDirectory = "/home/glorifiedgluer/repo";
+      ExecStart = "${gitmirrorScript}/bin/gitmirror";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+
+  systemd.timers.gitmirror = {
+    description = "Git mirror timer";
+    timerConfig = {
+      OnCalendar = "hourly";
+      Unit = "gitmirror.service";
+    };
+    wantedBy = [ "timers.target" ];
+  };
+}
+#+end_src
