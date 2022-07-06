@@ -1,13 +1,13 @@
 { pkgs, ... }:
 
 let
-  inherit (pkgs) emacs;
+  inherit (pkgs) emacsPgtkNativeComp;
 in
 {
   programs.doom-emacs = {
     enable = true;
     doomPrivateDir = ./config;
-    emacsPackage = emacs;
+    emacsPackage = emacsPgtkNativeComp;
     emacsPackagesOverlay = final: prev: {
       ts-fold = prev.ts;
       tree-sitter-langs = prev.tree-sitter-langs.override { plugins = pkgs.tree-sitter.allGrammars; };
