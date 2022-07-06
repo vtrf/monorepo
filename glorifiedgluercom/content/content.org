@@ -383,6 +383,9 @@ You can see the repository on the links below:
 :EXPORT_FILE_NAME: git-mirroring-systemd-nixos
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug git-mirroring-systemd-nixos
 :END:
+#+begin_description
+Configuring a Git mirror with systemd services and timers on NixOS.
+#+end_description
 
 For the past few years I have been collecting contributions to multiple projects
 on multiple platforms such as GitHub, GitLab, self-hosted Gitea instances and so
