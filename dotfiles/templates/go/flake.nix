@@ -18,10 +18,11 @@
           # https://github.com/golang/vscode-go/blob/master/docs/tools.md
           delve
           go-outline
+          gofumpt
           golangci-lint
           gomodifytags
-          gopls
           gopkgs
+          gopls
           gotests
           impl
         ];
@@ -43,7 +44,7 @@
 
         # `nix develop`
         devShell = with pkgs; mkShell {
-          buildInputs = [ go ] ++ tools;
+          buildInputs = [ go_1_18 ] ++ tools;
         };
       });
 }
