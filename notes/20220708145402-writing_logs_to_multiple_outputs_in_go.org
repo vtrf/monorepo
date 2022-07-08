@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       3c936299-dc6a-4fbf-ba16-432c6444b7c7
+:END:
+#+title: Writing logs to multiple outputs in Go
+
+The [[https://golang.org/pkg/io/#Writer][io.Writer]] interface is one of the most important interfaces in [[id:050485c8-cd04-4e3e-800f-1b8930836372][Go]]. We can
+take advantage of it to write logs to multiple places at the same time using the
+[[https://golang.org/pkg/io/#MultiWriter][io.MultiWriter]] function.
+
+For example, writing a log to the *Standard Output* ([[https://golang.org/pkg/os/#pkg-variables][os.Stdout]] and a file
+[[https://golang.org/pkg/os/#File][os.File]]) is pretty straightforward.
+
+#+begin_src go
+f, _ := os.Create("foo")
+defer f.Close()
+
+// our writer
+w := io.MultiWriter(os.Stdout, f)
+logger := log.New(w, "MultiWriter loggger", log.LstdFlags)
+#+end_src
