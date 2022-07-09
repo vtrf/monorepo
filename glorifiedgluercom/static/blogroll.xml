@@ -24,17 +24,17 @@
                 xmlUrl="https://emersion.fr/blog/atom.xml"
                 htmlUrl="https://emersion.fr/blog" />
             <outline
+                title="Fatih Arslan"
+                text="Programming, coffee and various other stuff."
+                type="rss"
+                xmlUrl="https://arslan.io/posts/index.xml"
+                htmlUrl="https://arslan.io/posts/" />
+            <outline
                 title="Julia Evans"
                 text=""
                 type="atom"
                 xmlUrl="https://jvns.ca/atom.xml"
                 htmlUrl="https://jvns.ca/" />
-            <outline
-                title="Paperless"
-                text=""
-                type="atom"
-                xmlUrl="https://paperless.blog/feed.xml"
-                htmlUrl="https://paperless.blog" />
             <outline
                 title="research!rsc"
                 text="Thoughts and links about programming, by [Russ Cox](https://swtch.com/~rsc/)."
