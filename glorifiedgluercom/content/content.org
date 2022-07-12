@@ -15,7 +15,7 @@
 :END:
 *** About me
 I'm *Victor Freire*, a student and software developer based in *Guarulhos,
-Brazil*, currently working at [[https://divionsmg.com][Divisions Maintenance Group]] as a
+Brazil*, currently working at [[https://divisionsmg.com][Divisions Maintenance Group]] as a
 software engineer writing [[https://fsharp.org/][F#]] and [[https://nixos.org][Nix]].
 
 I've taught myself coding, cloud computing and linux for years, out of passion.
