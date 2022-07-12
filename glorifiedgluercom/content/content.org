@@ -183,6 +183,10 @@ new people, new technologies and new everything.
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug write-broken-pipe
 :EXPORT_DATE: 2022-04-06
 :END:
+#+begin_description
+The adventure of figuring out the "tcp: write: broken pipe" error.
+#+end_description
+
 *tl;dr*: [[https://docs.konghq.com/kubernetes-ingress-controller/][Kong Ingress Controller]] was the culprit. Its timeout setting was
 closing the connection before the file could be sent. /If you're facing this
 issue in a long-lasting request, check your reverse proxy configuration, as it
