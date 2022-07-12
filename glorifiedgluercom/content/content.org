@@ -904,6 +904,9 @@ some comments. Thinking about it a bit more, it might work like some sort of
 microblog but... different? I should start doing it and stop ovethinking. It
 would be pretty cool to read a huge file with years of history written on it!
 
+Oh, and you can see the file I'm talking about right here:
+[[https://git.sr.ht/~glorifiedgluer/monorepo/blob/main/glorifiedgluercom/content/content.org][sourcehut:~glorifiedgluer/monorepo/glorifiedgluercom/content/content.org]].
+
 * Footnotes
 
 [fn:1] https://commonmark.org/
