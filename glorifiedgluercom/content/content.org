@@ -181,7 +181,7 @@ new people, new technologies and new everything.
 :PROPERTIES:
 :EXPORT_FILE_NAME: write-broken-pipe
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug write-broken-pipe
-:EXPORT_DATE: 2021-04-06
+:EXPORT_DATE: 2022-04-06
 :END:
 *tl;dr*: [[https://docs.konghq.com/kubernetes-ingress-controller/][Kong Ingress Controller]] was the culprit. Its timeout setting was
 closing the connection before the file could be sent. /If you're facing this
