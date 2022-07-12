@@ -116,7 +116,7 @@ storage. Services like [[https://medium.com][Medium]], [[https://substack.com][S
 posts with them at any time.
 
 At the moment I'm using [[https://neovim.io][Neovim]] to edit my blog posts in Markdown and hosting
-them in [[https://mataroa.blog][mataroa]]. Alternatives are: [[https://gohugo.io][Hugo]], [[https://getzola.org][Zola]] and more. All you need to setup a
+them in [[https://mataroa.blog][mataroa]][fn:2]. Alternatives are: [[https://gohugo.io][Hugo]], [[https://getzola.org][Zola]] and more. All you need to setup a
 web site is one of these programs, a bunch of Markdown files and a web server.
 You'll also find a lot of places to host your content for free such as [[https://gitlab.com][GitLab]],
 [[https://github.com][GitHub]] or [[https://netlify.com][Netlify]].
@@ -127,8 +127,6 @@ service; basic tech knowledge is needed to know where to put files in your web
 server provider of choice and if you want a custom domain such as this one
 you'll have to do some configuration. A quick YouTube tutorial might be
 sufficient to teach you how to do all of the above in minutes.
-
-[fn:1] Even better if following a specification such as [[https://commonmark.org/]]
 
 ** Burning out and finding out
 :PROPERTIES:
@@ -484,7 +482,7 @@ tasks:
    :CUSTOM_ID: nixos-on-builds.sr.ht
    :END:
 As I don't like to write shell scripts I use Nix and this is my favorite feature
-of this service. builds.sr.ht supports [[https://nixos.org][NixOS]] by default[fn:1]. This means that
+of this service. builds.sr.ht supports [[https://nixos.org][NixOS]] by default[fn:3]. This means that
 we can leverage Nix Flakes for truly declarative and reproducible builds there!
 Let's consider a small example using [[https://go.dev][Go]] to show you how easy it really is. A
 small =flake.nix= containing the following content should suffice our needs:
@@ -529,8 +527,6 @@ tasks:
 
 And that's it! We have our CI up and running with the guarantee of having our
 tools being the same on every run. No sudden updates or unexpected behavior.
-
-[fn:1] [[https://man.sr.ht/builds.sr.ht/compatibility.md#nixos]]
 
 ** Running a Raspberry Pi 4 with NixOS
 :PROPERTIES:
@@ -610,7 +606,7 @@ mount $DISK-part1 /mnt/boot
    :PROPERTIES:
    :CUSTOM_ID: nixos-configuration
    :END:
-In order to boot correctly, you need to define some boot options[fn:1]:
+In order to boot correctly, you need to define some boot options[fn:4]:
 
 #+begin_src nix
 {
@@ -696,8 +692,6 @@ cp /mnt/etc/nixos/hardware-configuration.nix hosts/rpi4/
 # install the system
 nixos-install --flake .#rpi4
 #+end_src
-
-[fn:1] https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi_4#Configuration
 ** Starting a personal monorepo
 :PROPERTIES:
 :EXPORT_DATE: 2022-05-11
@@ -710,7 +704,7 @@ Starting my journey with a personal monorepo managed by Nix.
 
 I've been using [[https://nixos.org][Nix]] as my package manager for 4 years now and it has been the
 best /computer-related/ decision I have ever made and fortunately, for the past
-few years its ecosystem has been growing a lot[fn:1] [fn:2] [fn:3]. Some of this
+few years its ecosystem has been growing a lot[fn:5] [fn:6] [fn:7]. Some of this
 movement is due to the advent o [[https://nixos.wiki/wiki/Flakes][Flakes]] that makes it /way/ easier to share
 reproducible outputs than the previous Nix solution of channels.
 
@@ -776,10 +770,6 @@ You can see the repository on the links below:
 
 - [[https://github.com/ratsclub/monorepo][GitHub]]
 - [[https://git.sr.ht/~glorifiedgluer/monorepo/][sourcehut]]
-
-[fn:1] https://blog.replit.com/nix
-[fn:2] https://shopify.engineering/what-is-nix
-[fn:3] https://hercules-ci.com/
 
 ** Git mirroring, systemd and NixOS
 :PROPERTIES:
@@ -887,3 +877,19 @@ key.
   };
 }
 #+end_src
+
+* Footnotes
+
+[fn:1] https://commonmark.org/
+
+[fn:2] This post did indeed deteriorate quickly as 2 years later I'm writing this blog on [[https://www.gnu.org/software/emacs/][GNU Emacs]] with [[https://orgmode.org/][Org Mode]] + [[https://ox-hugo.scripter.co/][ox-hugo]] and hosting it on [[https://srht.site/][sourcehut pages]].
+
+[fn:3] https://nixos.org
+
+[fn:4] https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi_4#Configuration
+
+[fn:5] https://blog.replit.com/nix
+
+[fn:6] https://shopify.engineering/what-is-nix
+
+[fn:7] https://hercules-ci.com/
