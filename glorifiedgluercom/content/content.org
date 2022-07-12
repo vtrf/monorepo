@@ -139,16 +139,16 @@ sufficient to teach you how to do all of the above in minutes.
 #+begin_description
 On being burnout for the first time.
 #+end_description
+
 At the time of this writing I'm burned out. I had no doubt it was a thing and
 that it could happen to anyone. However, I couldn't see myself suffering from
 this. At least not so soon.
 
 #+begin_quote
-  Burnout is caused when you repeatedly make large amounts of sacrifice and or
-  effort into high-risk problems that fail. It's the result of a negative
-  prediction error in the nucleus accumbens. You effectively condition your
-  brain to associate work with failure.
-  [[https://news.ycombinator.com/item?id=5630618][Source]]
+Burnout is caused when you repeatedly make large amounts of sacrifice and or
+effort into high-risk problems that fail. It's the result of a negative
+prediction error in the nucleus accumbens. You effectively condition your brain
+to associate work with failure. -- [[https://news.ycombinator.com/item?id=5630618][Source]]
 #+end_quote
 
 I've been pretty active for the past 4 to 5 years due to college, courses, work
@@ -204,13 +204,9 @@ Well, this is quite a surprise as we haven't seen this error message before...
 After all, what does it even mean? A quick Google search returned this:
 
 #+begin_quote
-  A condition in programming (also known in POSIX as EPIPE error code
-  and SIGPIPE signal), when a process requests an output to pipe or
-  socket, which was closed by peer
-
-  #+begin_quote
-    [[https://en.wikipedia.org/wiki/Broken_pipe][Wikipedia]]
-  #+end_quote
+A condition in programming (also known in POSIX as EPIPE error code and SIGPIPE
+signal), when a process requests an output to pipe or socket, which was closed
+by peer. -- [[https://en.wikipedia.org/wiki/Broken_pipe][Wikipedia]]
 #+end_quote
 
 Hmm, this /definitely/ shed some light on the problem. Considering that the HTTP
@@ -435,9 +431,8 @@ an it has been quite an interesting experience. Nonetheless, one of the services
 I really enjoy using is the their build service called [[https://builds.sr.ht][builds.sr.ht]].
 
 #+begin_quote
-  builds.sr.ht is a service on sr.ht that allows you to submit "build manifests"
-  for us to work on.
-  [[https://man.sr.ht/builds.sr.ht/][man.sr.ht]]
+builds.sr.ht is a service on sr.ht that allows you to submit "build manifests"
+for us to work on. -- [[https://man.sr.ht/builds.sr.ht/][man.sr.ht]]
 #+end_quote
 
 The thing I don't like on [[https://github.com/features/actions][GitHub Actions]] is that it is kind of /magical/. For
