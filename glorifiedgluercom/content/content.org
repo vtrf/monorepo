@@ -697,6 +697,7 @@ nixos-install --flake .#rpi4
 :EXPORT_DATE: 2022-05-11
 :EXPORT_FILE_NAME: starting-a-personal-monorepo
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug starting-a-personal-monorepo
+:ID:       143b30fd-8d32-4e67-9e13-5bf8a47ea8e2
 :END:
 #+begin_description
 Starting my journey with a personal monorepo managed by Nix.
@@ -878,6 +879,31 @@ key.
 }
 #+end_src
 
+** Moving this website to a single Org Mode file
+:PROPERTIES:
+:EXPORT_DATE: 2022-07-11
+:EXPORT_FILE_NAME: moving-site-org-mode
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :slug moving-site-org-mode
+:END:
+#+begin_description
+This website is now contained in a single Org Mode file.
+#+end_description
+
+I have always loved [[https://www.gnu.org/software/emacs/][GNU Emacs]] and its integrated computing environment. It has
+been even better after I started using [[https://github.com/doomemacs/doomemacs][Doom Emacs]][fn:8], it basically took care of
+things I was unable to do properly: make it fast and semantically coherent.
+Either for the lack of time or technical knowledge.
+
+As most GNU Emacs users, I love [[https://orgmode.org/][Org Mode]] and I love to write for this blog. So
+why not join these two things together? [[https://ox-hugo.scripter.co/][ox-hugo]] let's me write a /org/ file and
+turn it into multiple /hugo-compatible/ markdown files. This is quite a feature
+for me as I like to keep all my /stuff/ into one place[fn:9].
+
+It would be pretty cool to have a place to share small trips with pictures and
+some comments. Thinking about it a bit more, it might work like some sort of
+microblog but... different? I should start doing it and stop ovethinking. It
+would be pretty cool to read a huge file with years of history written on it!
+
 * Footnotes
 
 [fn:1] https://commonmark.org/
@@ -893,3 +919,9 @@ key.
 [fn:6] https://shopify.engineering/what-is-nix
 
 [fn:7] https://hercules-ci.com/
+
+[fn:8] For the past few weeks it has been even better with the work of
+[[https://github.com/thiagokokada][github:thiagokokada]] on the [[https://github.com/nix-community/nix-doom-emacs/][github:nix-community/nix-doom-emacs]] repository.
+Really, kudos for taking care of this project! 🎉
+
+[fn:9] [[id:143b30fd-8d32-4e67-9e13-5bf8a47ea8e2][Starting a personal monorepo]]
