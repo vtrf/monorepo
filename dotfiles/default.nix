@@ -133,18 +133,15 @@ in
       username = "victor";
       homeModules = [
         ./home/bash.nix
-        ./home/chromium.nix
         ./home/cli.nix
         ./home/dconf.nix
         ./home/doom
-        ./home/firefox.nix
         ./home/git.nix
         ./home/home.nix
         ./home/kitty.nix
         ./home/neovim
         ./home/newsboat.nix
         ./home/rbw.nix
-        ./home/vscodium.nix
 
         ./modules/meta.nix
 
