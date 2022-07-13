@@ -134,11 +134,9 @@ in
       homeModules = [
         ./home/bash.nix
         ./home/cli.nix
-        ./home/dconf.nix
         ./home/doom
         ./home/git.nix
         ./home/home.nix
-        ./home/kitty.nix
         ./home/neovim
         ./home/newsboat.nix
         ./home/rbw.nix
@@ -150,15 +148,8 @@ in
 
         ({ pkgs, ... }: {
           home.packages = with pkgs; [
-            awscli2
-            kubectl
-            google-cloud-sdk
             fzfpods
           ];
-
-          # can't run kitty without openGL so we just need its
-          # configuration files
-          programs.kitty.package = pkgs.hello;
         })
       ];
     };
