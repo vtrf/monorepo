@@ -906,25 +906,34 @@ would be pretty cool to read a huge file with years of history written on it!
 
 Oh, and you can see the file I'm talking about right here:
 [[https://git.sr.ht/~glorifiedgluer/monorepo/blob/main/glorifiedgluercom/content/content.org][sourcehut:~glorifiedgluer/monorepo/glorifiedgluercom/content/content.org]].
-** TODO Trying out a new keyboard layout
+** ErgoJourney - Choosing a new keyboard layout
 :PROPERTIES:
 :EXPORT_DATE: 2022-07-18
-:EXPORT_FILE_NAME: trying-a-new-keyboard-layout
+:EXPORT_FILE_NAME: ergojourney-choosing-a-new-keyboard-layout
 :END:
 #+begin_description
-The beginning of my journey on an alien keyboard layout.
+The beginning of my journey for an ergonomic setup. Starting with a new keyboard layout.
 #+end_description
 
 After multiple injuries to my right wrist due to a multitude of activities
-(sports, bad typing and an /act of god/) I decided to change my keyboard layout
+(sports, bad typing[fn:13] and an /act of god/) I decided to change my keyboard layout
 to one that could possibly demand less work off of my hands.
 
 First let's go through a small history of keyboards I've previously used.
 Unfortunately I don't actually have pictures of them as I don't have the habit
-to take pictures of things (which I should reconsider!).
+to take pictures of things (which I should reconsider!). Briefly, the complete
+list is the following:
+
+1. IBM Model M
+2. ThinkPad X230
+3. HyperX Alloy FPS Pro (Cherry MX Blue)
+4. Keychron K2V2 (Cherry MX Red)
+5. Corne V3 (failed attempt, the PCB wasn't delivered)
+6. SZA Moonlander Mark I
 
 *** Previously used keyboards
 
+Let's talk about the keyboards I have owned for the past decade.
 There was a place near (São Paulo is huge but everything is close if you can
 walk to the subway) my work called /Santa Efigênia/. At the time, this was the
 biggest place to go look after tech gadgets here in São Paulo.
@@ -946,7 +955,70 @@ instantly regretted my decisions on the /Model M/+ and got a *[[https://row.hype
 Pro]]* with /Cherry MX Blue/ switches for a steal. For the price I paid it was an
 actually OK keyboard, however the full price was not worth it in my opinion. I
 found the switch too heavy for hours of typing and the sound was just... weird.
-I can't explain but it was not that pleasant type on it.
+I can't explain but for me it was not that pleasant type on it. Anyway, I ended
+up selling it too.[fn:10]
+
+*** Current keyboard
+
+My current keyboard is the [[https://www.keychron.com/products/keychron-k2-hot-swappable-wireless-mechanical-keyboard][Keychron K2 Version 2]]. It's Wireless, Hot-swappable
+(meaning that I can /swap/ the switches), Compact layout (84 keys[fn:11]) and
+Gateron G Red Switch (pre-lubed).
+
+Some things I learned with this keyboard is that I more fond of linear switches
+than clicky/tactile ones. The thing that bothered me the most is that the
+keycaps accumulated a lot of grease and started to get too shiny[fn:12].
+
+# TODO add a picture of my keychron
+
+*** Future Keyboards
+**** Corne V3
+
+One of the first things you discover when you start to look after ergonomic
+keyboards is that you can build one yourself. There is a multitude of
+communities, projects and contents over the internet.
+
+I really liked some models:
+
+1. [[https://github.com/davidphilipbarr/Sweep][Sweep]] is a /34 keys/ split keyboard. I wanted a bit more keys, so I
+   discarded this one.
+2. [[https://github.com/diepala/cantor/][Cantor]] is a /42 keys/ split keyboard. The problem with this one is that I
+   couldn't find the required low-profile switches for cheap, so I discarded
+   this option. However, it was my favorite design!
+3. [[https://github.com/foostan/crkbd][Corne]] is a /36 keys/ split keyboard. This is probably the most famous split
+   keyboard. I chose it because it was basically the cheapest option for me and
+   also had more keys than Sweep.
+
+Although I bought everything needed to start soldering the Corne together, my
+country's post office probably lost my PCB during delivery. So I don't have much
+to say about, if they happen to deliver it I might write about my experience
+soldering it or just straight out buy the [[https://keyhive.xyz/shop/corne-v3][complete kit from KeyHive]].
+
+**** SZA Moonlader Mark I
+
+At the moment I'm waiting for my [[https://www.zsa.io/moonlander/][Moonlander SZA Mark I]] to arrive. I didn't do
+much research on the keyboard as I wasn't intending on buying one (too expensive
+here) and instead I got one as a gift! Given this, I thought it would be cool to wait
+for a cool unboxing experience to a novel technology for me.
+
+# TODO add a picture of my moonlander with the keycaps, don't forget to link the keycaps
+
+*** Drinking the Colemak Kool-Aid
+
+Considering this huge introduction my conclusion was that I should probably take
+advantage of this new keyboard form I'm getting and learn a new keyboard layout.
+This might give me some benefits upon my wrist injuries and make typing less
+painful.
+
+I was between [[https://en.wikipedia.org/wiki/Dvorak_keyboard_layout][Dvorak]] and [[https://colemak.com/][Colemak]], nonetheless all the discussions around them
+seemed to be mostly about personal preferences so I decided to pick one side
+with the most sensible technique: *the coin flip*. The coin told me to choose
+Colemak.
+
+Through my small research I found out that Colemak ships by default on most
+Linux distros and it works very good with other languages (mine being Brazilian
+Portuguese).
+
+I guess that the only thing left is to practice typing on it now!
 
 * Footnotes
 
@@ -969,3 +1041,11 @@ I can't explain but it was not that pleasant type on it.
 Really, kudos for taking care of this project! 🎉
 
 [fn:9] [[id:143b30fd-8d32-4e67-9e13-5bf8a47ea8e2][Starting a personal monorepo]]
+
+[fn:13] I've never learned how to touch type correctly and as such I only use at most 3 fingers on each hand.
+
+[fn:10] [[https://github.com/yuri-potatoq][Yuri]] was the friend of mine that bought it and actually liked to type on it. Different people, different switch tastes. 😊
+
+[fn:11] Most known as a 75% layout.
+
+[fn:12] I fixed this with a cheap [[https://pt.aliexpress.com/item/32946133227.html][keyset from AliExpress]] that meant to go to my Corne V3.
