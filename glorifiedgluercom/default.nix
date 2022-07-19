@@ -45,13 +45,12 @@ utils.lib.eachDefaultSystem
 
         buildPhase = ''
           hugo
-          # tar -cvzf site.tar.gz -C public .
+          tar -cvzf site.tar.gz -C public .
         '';
 
         installPhase = ''
           mkdir -p $out
-          # cp -r site.tar.gz $out
-          cp -r public/* $out
+          cp -r site.tar.gz $out
         '';
       };
 
