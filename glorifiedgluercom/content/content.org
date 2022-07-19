@@ -906,6 +906,47 @@ would be pretty cool to read a huge file with years of history written on it!
 
 Oh, and you can see the file I'm talking about right here:
 [[https://git.sr.ht/~glorifiedgluer/monorepo/blob/main/glorifiedgluercom/content/content.org][sourcehut:~glorifiedgluer/monorepo/glorifiedgluercom/content/content.org]].
+** TODO Trying out a new keyboard layout
+:PROPERTIES:
+:EXPORT_DATE: 2022-07-18
+:EXPORT_FILE_NAME: trying-a-new-keyboard-layout
+:END:
+#+begin_description
+The beginning of my journey on an alien keyboard layout.
+#+end_description
+
+After multiple injuries to my right wrist due to a multitude of activities
+(sports, bad typing and an /act of god/) I decided to change my keyboard layout
+to one that could possibly demand less work off of my hands.
+
+First let's go through a small history of keyboards I've previously used.
+Unfortunately I don't actually have pictures of them as I don't have the habit
+to take pictures of things (which I should reconsider!).
+
+*** Previously used keyboards
+
+There was a place near (São Paulo is huge but everything is close if you can
+walk to the subway) my work called /Santa Efigênia/. At the time, this was the
+biggest place to go look after tech gadgets here in São Paulo.
+
+As all places like this, there were a lot of second-hand shops. Places that
+bought boxes after boxes of old corporate hardware. And this is how I got my
+hands on an *[[https://en.wikipedia.org/wiki/Model_M_keyboard][IBM Model M]]*! I'm going to be honest with you, I didn't know it was
+a /rare/ keyboard nor that it was an icon of some sort. I just liked the design
+and bought it for a cheap price as it was the cooler PS/2 keyboard I could find
+there.
+
+After selling my /Model M/ way cheaper than I should (😭) I got a *[[https://en.wikipedia.org/wiki/ThinkPad_X_series#X230][ThinkPad
+X230]]* that I used for about 10 years or so. I really liked the feeling of the
+keyboard and even tried to mod it to use the X220 but I have the unpopular
+opinion that the X230 has the best keyboard.
+
+While using my /X230/ I finally discovered what a mechanical keyboard is +and
+instantly regretted my decisions on the /Model M/+ and got a *[[https://row.hyperx.com/pt-br/products/hyperx-alloy-fps-pro-mechanical-gaming-keyboard][HyperX Alloy FPS
+Pro]]* with /Cherry MX Blue/ switches for a steal. For the price I paid it was an
+actually OK keyboard, however the full price was not worth it in my opinion. I
+found the switch too heavy for hours of typing and the sound was just... weird.
+I can't explain but it was not that pleasant type on it.
 
 * Footnotes
 
