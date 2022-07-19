@@ -12,22 +12,26 @@
     {{ template "_internal/opengraph.html" . }}
   </head>
   {{ partial "nav.html" }}
-  <main>
-    <h2>
-      {{.Title}}
-      <small>
-        {{.Date.Format "January 2, 2006"}}
-        {{ with .Params.author }}
-          by {{ . }}
-        {{ end }}
-      </small>
-    </h2>
+  <body>
+    <main>
+      <h2>
+        {{.Title}}
+        <small>
+          {{.Date.Format "January 2, 2006"}}
+          {{ with .Params.author }}
+            by {{ . }}
+          {{ end }}
+        </small>
+      </h2>
 
-    {{ if .Params.toc }}
-      <h2>Table of Contents</h2>
-      {{ .TableOfContents }}
-    {{ end }}
+      {{ if .Params.toc }}
+        <h2>Table of Contents</h2>
+        {{ .TableOfContents }}
+      {{ end }}
 
-    {{.Content}}
-  </main>
+      {{.Content}}
+
+      {{ partial "footer.html" }}
+    </main>
+  </body>
 </html>
